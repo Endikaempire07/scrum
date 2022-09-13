@@ -48,7 +48,6 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	private JMenuBar menuBar;
 	private JMenu Planta0, Planta1, Planta2;
 	private JMenuItem Calefaccion,Calefaccion1,Calefaccion2;
-	File logFile = new File("log.txt");
 	
 	/**
 	 * Launch the application.
@@ -192,6 +191,8 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	}
 	
 	public void cambiar(JButton btn, JLabel lbl, int num) {
+		File logFile = new File("log.txt");
+		
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		Date date = new Date(System.currentTimeMillis());
 		
