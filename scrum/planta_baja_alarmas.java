@@ -37,7 +37,7 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 	private JMenuItem Alarmas,Alarmas1,Alarmas2;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
-	private JButton btnNewButton_2;
+	private JButton btnMenu_pba;
 	/**
 	 * Launch the application.
 	 */
@@ -85,8 +85,8 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 		Alarmas.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_alarmas menuCalefaccion = new planta_baja_alarmas();
-            	menuCalefaccion.setVisible(true);
+            	planta_baja_alarmas Planta0 = new planta_baja_alarmas();
+            	Planta0.setVisible(true);
             	dispose();
             }
 		});
@@ -98,15 +98,22 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 		Alarmas1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta1_alarmas menuCalefaccion = new planta1_alarmas();
-            	menuCalefaccion.setVisible(true);
+            	planta1_alarmas Planta1 = new planta1_alarmas();
+            	Planta1.setVisible(true);
             	dispose();
             }
 		});
 		Planta1.add(Alarmas1);
 
 		Alarmas2 = new JMenuItem("Alarmas");
-		Alarmas2.addActionListener(this);
+		Alarmas2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+            	//Close actual frame and open another one
+            	planta2_alarmas Planta2 = new planta2_alarmas();
+            	Planta2.setVisible(true);
+            	dispose();
+            }
+		});
 		Planta2.add(Alarmas2);
 		
 	
@@ -130,11 +137,18 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.SOUTH, btnNewButton_1, -6, SpringLayout.NORTH, btnNewButton);
 		p.add(btnNewButton_1);
 		
-		btnNewButton_2 = new JButton("New button");
-		sl_p.putConstraint(SpringLayout.WEST, btnNewButton_2, 0, SpringLayout.WEST, btnNewButton);
-		sl_p.putConstraint(SpringLayout.SOUTH, btnNewButton_2, -6, SpringLayout.NORTH, btnNewButton_1);
-		p.add(btnNewButton_2);
-		
+		btnMenu_pba = new JButton("Men\u00FA");
+		sl_p.putConstraint(SpringLayout.WEST, btnMenu_pba, 0, SpringLayout.WEST, btnNewButton);
+		sl_p.putConstraint(SpringLayout.SOUTH, btnMenu_pba, -6, SpringLayout.NORTH, btnNewButton_1);
+		p.add(btnMenu_pba);
+		btnMenu_pba.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+            	//Close actual frame and open another one
+            	menu_inicio menu = new menu_inicio();
+            	menu.setVisible(true);
+            	dispose();
+            }
+		});
 		
 
 		SpringLayout sl_contentPane = new SpringLayout();

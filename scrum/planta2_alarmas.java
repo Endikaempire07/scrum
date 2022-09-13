@@ -37,7 +37,7 @@ public class planta2_alarmas extends JFrame implements ActionListener{
 	private JMenuItem Alarmas,Alarmas1,Alarmas2;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
-	private JButton btnNewButton_2;
+	private JButton btnMenu_p2a;
 	/**
 	 * Launch the application.
 	 */
@@ -80,25 +80,47 @@ public class planta2_alarmas extends JFrame implements ActionListener{
 		Planta2 = new JMenu("Planta 2");
 		menuBar.add(Planta2);
 		
-		
+
+
 		Alarmas = new JMenuItem("Alarmas");
-		Alarmas.addActionListener(this);
+		Alarmas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+            	//Close actual frame and open another one
+            	planta_baja_alarmas Planta0 = new planta_baja_alarmas();
+            	Planta0.setVisible(true);
+            	dispose();
+            }
+		});
+		
 		Planta0.add(Alarmas);
 
 	
 		Alarmas1 = new JMenuItem("Alarmas");
-		Alarmas1.addActionListener(this);
+		Alarmas1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+            	//Close actual frame and open another one
+            	planta1_alarmas Planta1 = new planta1_alarmas();
+            	Planta1.setVisible(true);
+            	dispose();
+            }
+		});
 		Planta1.add(Alarmas1);
 
 		Alarmas2 = new JMenuItem("Alarmas");
-		Alarmas2.addActionListener(this);
+		Alarmas2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+            	//Close actual frame and open another one
+            	planta2_alarmas Planta2 = new planta2_alarmas();
+            	Planta2.setVisible(true);
+            	dispose();
+            }
+		});
 		Planta2.add(Alarmas2);
-		
 	
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
-		Panelimagen_planta2 p = new Panelimagen_planta2();
+		Panelimagen_planta_baja p = new Panelimagen_planta_baja();
 		p.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(p);
 		
@@ -115,12 +137,20 @@ public class planta2_alarmas extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.SOUTH, btnNewButton_1, -6, SpringLayout.NORTH, btnNewButton);
 		p.add(btnNewButton_1);
 		
-		btnNewButton_2 = new JButton("New button");
-		sl_p.putConstraint(SpringLayout.WEST, btnNewButton_2, 0, SpringLayout.WEST, btnNewButton);
-		sl_p.putConstraint(SpringLayout.SOUTH, btnNewButton_2, -6, SpringLayout.NORTH, btnNewButton_1);
-		p.add(btnNewButton_2);
+		btnMenu_p2a = new JButton("Men\u00FA");
+		sl_p.putConstraint(SpringLayout.WEST, btnMenu_p2a, 0, SpringLayout.WEST, btnNewButton);
+		sl_p.putConstraint(SpringLayout.SOUTH, btnMenu_p2a, -6, SpringLayout.NORTH, btnNewButton_1);
+		p.add(btnMenu_p2a);
 		
-		
+		btnMenu_p2a.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Close actual frame and open another one
+            	menu_inicio menu = new menu_inicio();
+            	menu.setVisible(true);
+            	dispose();
+			}
+		});
 
 		SpringLayout sl_contentPane = new SpringLayout();
 		
