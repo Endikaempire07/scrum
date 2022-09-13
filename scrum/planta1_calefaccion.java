@@ -19,11 +19,24 @@ import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
 import javax.swing.JScrollPane;
 import javax.swing.SpringLayout;
 import java.awt.Dimension;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import java.awt.CardLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.FlowLayout;
+import javax.swing.JTextArea;
 
 public class planta1_calefaccion extends JFrame implements ActionListener{
 
@@ -35,9 +48,8 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	private JMenuBar menuBar;
 	private JMenu Planta0, Planta1, Planta2;
 	private JMenuItem Calefaccion,Calefaccion1,Calefaccion2;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
-	private JButton btnMenu_p1c;
+	File logFile = new File("log.txt");
+	
 	/**
 	 * Launch the application.
 	 */
@@ -47,6 +59,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 				try {
 					planta1_calefaccion frame = new planta1_calefaccion();
 					frame.setVisible(true);
+					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -58,7 +71,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	 * Create the frame.
 	 */
 	public planta1_calefaccion() {
-		setTitle("Planta 1 Calefacción");
+		setTitle("Planta 1 Calefacciï¿½n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 	
@@ -82,7 +95,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		
 		
 		
-		Calefaccion = new JMenuItem("Calefacción");
+		Calefaccion = new JMenuItem("Calefacciï¿½n");
 		Calefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -95,7 +108,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		Planta0.add(Calefaccion);
 
 	
-		Calefaccion1 = new JMenuItem("Calefacción");
+		Calefaccion1 = new JMenuItem("Calefacciï¿½n");
 		Calefaccion1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -106,7 +119,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		});
 		Planta1.add(Calefaccion1);
 
-		Calefaccion2 = new JMenuItem("Calefacción");
+		Calefaccion2 = new JMenuItem("Calefacciï¿½n");
 		Calefaccion2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -124,32 +137,42 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		Panelimagen_planta1 p = new Panelimagen_planta1();
 		p.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(p);
+		p.setLayout(null);
 		
-		SpringLayout sl_p = new SpringLayout();
-		p.setLayout(sl_p);
+		JLabel lbl_c_1 = new JLabel("New label");
+		lbl_c_1.setForeground(Color.GREEN);
+		lbl_c_1.setBounds(32, 245, 112, 13);
+		p.add(lbl_c_1);
 		
-		btnNewButton = new JButton("New button");
-		sl_p.putConstraint(SpringLayout.WEST, btnNewButton, 36, SpringLayout.WEST, p);
-		sl_p.putConstraint(SpringLayout.SOUTH, btnNewButton, -57, SpringLayout.SOUTH, p);
-		p.add(btnNewButton);
-		
-		btnNewButton_1 = new JButton("New button");
-		sl_p.putConstraint(SpringLayout.WEST, btnNewButton_1, 0, SpringLayout.WEST, btnNewButton);
-		sl_p.putConstraint(SpringLayout.SOUTH, btnNewButton_1, -6, SpringLayout.NORTH, btnNewButton);
-		p.add(btnNewButton_1);
-		
-		btnMenu_p1c = new JButton("Men\u00FA");
-		btnMenu_p1c.addActionListener(new ActionListener() {
+		JButton btn_c_1 = new JButton("ON");
+		btn_c_1.setBackground(Color.GREEN);
+		btn_c_1.setToolTipText("encendido");
+		btn_c_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-            	menu_inicio menu = new menu_inicio();
-            	menu.setVisible(true);
-            	dispose();
+				cambiar(btn_c_1,lbl_c_1,1);
 			}
 		});
-		sl_p.putConstraint(SpringLayout.WEST, btnMenu_p1c, 0, SpringLayout.WEST, btnNewButton);
-		sl_p.putConstraint(SpringLayout.SOUTH, btnMenu_p1c, -6, SpringLayout.NORTH, btnNewButton_1);
-		p.add(btnMenu_p1c);
+		btn_c_1.setAlignmentY(0.0f);
+		btn_c_1.setBounds(32, 132, 47, 21);
+		p.add(btn_c_1);	
+		
+		JLabel lbl_c_2 = new JLabel("New label");
+		lbl_c_2.setForeground(Color.GREEN);
+		lbl_c_2.setBounds(32, 268, 112, 13);
+		p.add(lbl_c_2);
+		
+		JButton btn_c_2 = new JButton("ON");
+		btn_c_2.setToolTipText("encendido");
+		btn_c_2.setBackground(Color.GREEN);
+		btn_c_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cambiar(btn_c_2,lbl_c_2,2);
+			}
+		});
+		btn_c_2.setAlignmentY(0.0f);
+		btn_c_2.setBounds(159, 132, 47, 21);
+		p.add(btn_c_2);
+		
 		
 		
 
@@ -166,5 +189,44 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void cambiar(JButton btn, JLabel lbl, int num) {
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+		Date date = new Date(System.currentTimeMillis());
+		
+		try {
+			
+			if (btn.getToolTipText() == "encendido") {
+				
+				btn.setToolTipText("apagado");
+				btn.setBackground(Color.RED);
+				lbl.setForeground(Color.RED);
+				lbl.setText(num + ": Apagado");
+				
+				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
+				output.write("[" + formatter.format(date) + "] Apagando calefaccion " + num);
+				output.newLine();
+				output.close();
+
+			}
+			else {
+				
+				btn.setToolTipText("encendido");
+				btn.setBackground(Color.GREEN);
+				lbl.setForeground(Color.GREEN);
+				lbl.setText(num + ": Encendido");
+	
+				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
+				output.write("[" + formatter.format(date) + "] Encendiendo calefaccion " + num);
+				output.newLine();
+				output.close();
+				
+			}
+			
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			System.out.println("error de escritura");
+		}
 	}
 }
