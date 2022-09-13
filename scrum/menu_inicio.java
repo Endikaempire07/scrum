@@ -78,7 +78,7 @@ public class menu_inicio extends JFrame {
 		btnCalefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	menu_plantas_cal menuCalefaccion = new menu_plantas_cal();
+            	planta_baja_calefaccion menuCalefaccion = new planta_baja_calefaccion();
             	menuCalefaccion.setVisible(true);
             	menuCalefaccion.setBounds(rootPane.getBounds());
             	menuCalefaccion.setLocationRelativeTo(rootPane);
@@ -100,7 +100,7 @@ public class menu_inicio extends JFrame {
 		btnAlarmas.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	menu_plantas_alar menuAlarma = new menu_plantas_alar();
+            	planta_baja_alarmas menuAlarma = new planta_baja_alarmas();
             	menuAlarma.setVisible(true);
             	menuAlarma.setBounds(rootPane.getBounds());
             	menuAlarma.setLocationRelativeTo(rootPane);
