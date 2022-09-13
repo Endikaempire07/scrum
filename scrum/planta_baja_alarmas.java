@@ -75,19 +75,6 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 		
 		Planta2 = new JMenu("Planta 2");
 		menuBar.add(Planta2);
-		
-		
-		Alarmas = new JMenuItem("Alarmas");
-		Alarmas.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-            	//Close actual frame and open another one
-            	planta_baja_alarmas Planta0 = new planta_baja_alarmas();
-            	Planta0.setVisible(true);
-            	dispose();
-            }
-		});
-		
-		Planta0.add(Alarmas);
 
 	
 		Alarmas1 = new JMenuItem("Alarmas");
@@ -100,17 +87,29 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
             }
 		});
 		Planta1.add(Alarmas1);
-
-		Alarmas2 = new JMenuItem("Alarmas");
-		Alarmas2.addActionListener(new ActionListener() {
+		
+				Alarmas2 = new JMenuItem("Alarmas");
+				menuBar.add(Alarmas2);
+				Alarmas2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
             	planta2_alarmas Planta2 = new planta2_alarmas();
             	Planta2.setVisible(true);
             	dispose();
             }
+				});
+		
+		
+		Alarmas = new JMenuItem("Alarmas");
+		menuBar.add(Alarmas);
+		Alarmas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+            	//Close actual frame and open another one
+            	planta_baja_alarmas Planta0 = new planta_baja_alarmas();
+            	Planta0.setVisible(true);
+            	dispose();
+            }
 		});
-		Planta2.add(Alarmas2);
 		
 	
 		contentPane = new JPanel();
