@@ -77,10 +77,10 @@ public class menu_inicio extends JFrame {
 		btnCalefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_calefaccion menuAlarmas = new planta_baja_calefaccion();
-            	menuAlarmas.setVisible(true);
-            	menuAlarmas.setBounds(rootPane.getBounds());
-            	menuAlarmas.setLocationRelativeTo(rootPane);
+            	menu_plantas_cal menuCalefaccion = new menu_plantas_cal();
+            	menuCalefaccion.setVisible(true);
+            	menuCalefaccion.setBounds(rootPane.getBounds());
+            	menuCalefaccion.setLocationRelativeTo(rootPane);
             	dispose();
             }
 		});
@@ -99,10 +99,10 @@ public class menu_inicio extends JFrame {
 		btnAlarmas.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_alarmas menuCalefaccion = new planta_baja_alarmas();
-            	menuCalefaccion.setVisible(true);
-            	menuCalefaccion.setBounds(rootPane.getBounds());
-            	menuCalefaccion.setLocationRelativeTo(rootPane);
+            	menu_plantas_alar menuAlarma = new menu_plantas_alar();
+            	menuAlarma.setVisible(true);
+            	menuAlarma.setBounds(rootPane.getBounds());
+            	menuAlarma.setLocationRelativeTo(rootPane);
             	dispose();
             }
 		});
