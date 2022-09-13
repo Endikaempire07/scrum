@@ -61,10 +61,6 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 		setTitle("Planta baja alarmas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
-	
-		
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
 		
 		menuBar = new JMenuBar();
 		menuBar.setForeground(Color.WHITE);
@@ -120,7 +116,7 @@ public class planta_baja_alarmas extends JFrame implements ActionListener{
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
-		Panelimagen_planta2 p = new Panelimagen_planta2();
+		Panelimagen_planta_baja p = new Panelimagen_planta_baja();
 		p.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(p);
 		
