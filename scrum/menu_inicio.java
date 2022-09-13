@@ -61,6 +61,7 @@ public class menu_inicio extends JFrame {
 		
 		JLabel lblSeleccion = new JLabel("Selección de planos");
 		JLabel lblCalefaccion = new JLabel("Calefacciónes");
+;
 		JLabel lblAlarmas = new JLabel("Alarmas de incendios");
 		
 		JButton btnCalefaccion = new JButton("Visualizar");
