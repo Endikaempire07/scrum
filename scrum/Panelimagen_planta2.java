@@ -17,7 +17,7 @@ public class Panelimagen_planta2 extends javax.swing.JPanel {
 	 */
 
 	public Panelimagen_planta2() {
-		this.setSize(100, 50);
+		this.setSize(400, 200);
 		
 	}
 	

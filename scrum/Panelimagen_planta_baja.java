@@ -17,13 +17,13 @@ public class Panelimagen_planta_baja extends javax.swing.JPanel {
 	 */
 
 	public Panelimagen_planta_baja() {
-		this.setSize(100, 50);
+		this.setSize(400, 200);
 		
 	}
 	
 	public void paintComponent(Graphics g) {
 		Dimension tamano = getSize();
-		ImageIcon ImagenFondo = new ImageIcon(getClass().getResource("/imagenes/Planta.png"));
+		ImageIcon ImagenFondo = new ImageIcon(getClass().getResource("/imagenes/Planta2.png"));
 		g.drawImage(ImagenFondo.getImage(), 0, 0, tamano.width, tamano.height, null);
 		setOpaque(false);
 		super.paintComponent(g);
