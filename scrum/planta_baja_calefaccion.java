@@ -19,6 +19,7 @@ import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
 import javax.swing.JScrollPane;
@@ -109,6 +110,7 @@ public class planta_baja_calefaccion extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
             	planta2_calefaccion Planta0 = new planta2_calefaccion();
+			
             	Planta0.setVisible(true);
             	dispose();
             }
