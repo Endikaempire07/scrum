@@ -14,6 +14,7 @@ import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 
 public class menu_inicio extends JFrame {
@@ -46,7 +47,7 @@ public class menu_inicio extends JFrame {
 	public menu_inicio() {
 		setTitle("Inicio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 585, 300);
+		setBounds(100, 100, 784, 432);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -63,10 +64,20 @@ public class menu_inicio extends JFrame {
 		JLabel lblAlarmas = new JLabel("Alarmas de incendios");
 		
 		JButton btnCalefaccion = new JButton("Visualizar");
+		btnCalefaccion.setFont(new Font("Ravie", Font.PLAIN, 15));
+		btnCalefaccion.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(MouseEvent evt) {
+		    	btnCalefaccion.setFont(btnCalefaccion.getFont().deriveFont(20.0f));
+		    }
+
+		    public void mouseExited(MouseEvent evt) {
+		    	btnCalefaccion.setFont(btnCalefaccion.getFont().deriveFont(15.0f));
+		    }
+		});
 		btnCalefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_alarmas menuAlarmas = new planta_baja_alarmas();
+            	planta_baja_calefaccion menuAlarmas = new planta_baja_calefaccion();
             	menuAlarmas.setVisible(true);
             	menuAlarmas.setBounds(rootPane.getBounds());
             	menuAlarmas.setLocationRelativeTo(rootPane);
@@ -75,10 +86,20 @@ public class menu_inicio extends JFrame {
 		});
 		
 		JButton btnAlarmas = new JButton("Visualizar");
+		btnAlarmas.setFont(new Font("Ravie", Font.PLAIN, 15));
+		btnAlarmas.addMouseListener(new java.awt.event.MouseAdapter() {
+		    public void mouseEntered(MouseEvent evt) {
+		    	btnAlarmas.setFont(btnAlarmas.getFont().deriveFont(20.0f));
+		    }
+
+		    public void mouseExited(MouseEvent evt) {
+		    	btnAlarmas.setFont(btnAlarmas.getFont().deriveFont(15.0f));
+		    }
+		});
 		btnAlarmas.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_calefaccion menuCalefaccion = new planta_baja_calefaccion();
+            	planta_baja_alarmas menuCalefaccion = new planta_baja_alarmas();
             	menuCalefaccion.setVisible(true);
             	menuCalefaccion.setBounds(rootPane.getBounds());
             	menuCalefaccion.setLocationRelativeTo(rootPane);
@@ -88,31 +109,31 @@ public class menu_inicio extends JFrame {
 		
 		
 		FlowLayout flowLayout = (FlowLayout) panelSeleccion.getLayout();
-		flowLayout.setVgap(25);
+		flowLayout.setVgap(50);
 		contentPane.add(panelSeleccion, BorderLayout.NORTH);
 		
-		lblSeleccion.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblSeleccion.setFont(new Font("Ravie", Font.PLAIN, 45));
 		panelSeleccion.add(lblSeleccion);
 		
 		FlowLayout flowLayout_1 = (FlowLayout) panelPlanos.getLayout();
-		flowLayout_1.setVgap(25);
+		flowLayout_1.setVgap(40);
 		contentPane.add(panelPlanos, BorderLayout.CENTER);
 		
 		panelPlanos.add(panelCalefacciones);
-		panelCalefacciones.setLayout(new GridLayout(2, 1, 0, 20));
+		panelCalefacciones.setLayout(new GridLayout(2, 1, 0, 40));
 		
-		lblCalefaccion.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCalefaccion.setFont(new Font("Ravie", Font.PLAIN, 25));
 		panelCalefacciones.add(lblCalefaccion);
 		
 		panelCalefacciones.add(btnCalefaccion);
 		
-		Component separador = Box.createHorizontalStrut(40);
+		Component separador = Box.createHorizontalStrut(60);
 		panelPlanos.add(separador);
 		
 		panelPlanos.add(panelAlarmas);
-		panelAlarmas.setLayout(new GridLayout(2, 1, 0, 20));
+		panelAlarmas.setLayout(new GridLayout(2, 1, 0, 40));
 		
-		lblAlarmas.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAlarmas.setFont(new Font("Ravie", Font.PLAIN, 25));
 		panelAlarmas.add(lblAlarmas);
 		
 		panelAlarmas.add(btnAlarmas);
