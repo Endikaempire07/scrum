@@ -5,25 +5,17 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
-import javax.swing.JScrollPane;
 import javax.swing.SpringLayout;
-import java.awt.Dimension;
 
 public class planta1_calefaccion extends JFrame implements ActionListener{
 
@@ -32,6 +24,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	@SuppressWarnings("unused")
 	private JMenuBar menuBar;
 	private JMenu Planta0, Planta1, Planta2;
 	private JMenuItem Calefaccion,Calefaccion1,Calefaccion2;
@@ -57,6 +50,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings("unused")
 	public planta1_calefaccion() {
 		setTitle("Planta 1 Calefacción");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

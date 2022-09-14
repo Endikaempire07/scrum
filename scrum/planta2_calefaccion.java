@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
 import javax.swing.JLabel;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 
 import javax.swing.JButton;
@@ -16,6 +17,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -34,8 +37,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JMenu Planta0, Planta1, Planta2;
-	private JMenuItem Calefaccion,Calefaccion1,Calefaccion2;
+	private JMenuItem Menu,Calefaccion,Calefaccion1,Calefaccion2;
 	private JButton btnCalefaccionA;
 	private JButton btn1_p2c;
 	private JLabel lblestado;
@@ -170,54 +172,84 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		menuBar.setForeground(Color.WHITE);
 		menuBar.setBackground(Color.GRAY);
 		setJMenuBar(menuBar);
-
-		Planta0 = new JMenu("Planta baja");
-		menuBar.add(Planta0);
-
-		Planta1 = new JMenu("Planta 1");
-		menuBar.add(Planta1);
 		
-		Planta2 = new JMenu("Planta 2");
-		menuBar.add(Planta2);
-		
-		
-
-		
-		Calefaccion = new JMenuItem("Calefacción");
-		Calefaccion.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-            	//Close actual frame and open another one
-            	planta_baja_calefaccion Planta0 = new planta_baja_calefaccion();
-            	Planta0.setVisible(true);
-            	dispose();
-            }
+		Menu = new JMenuItem("Menu");
+		menuBar.add(Menu);
+		Menu.setBackground(Color.LIGHT_GRAY);
+		Menu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent me) {
+				Menu.setBackground(Color.black);
+				Menu.setForeground(Color.white);
+			}
+			@Override
+			public void mouseExited(MouseEvent me){
+				Menu.setBackground(Color.LIGHT_GRAY);
+				Menu.setForeground(Color.black);
+			}
+		});
+		Menu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				// Close actual frame and open another one
+				menu_inicio menu = new menu_inicio();
+				menu.setVisible(true);
+				dispose();
+			}
 		});
 		
-		Planta0.add(Calefaccion);
-
-	
-		Calefaccion1 = new JMenuItem("Calefacción");
+		Calefaccion = new JMenuItem("Planta baja");
+		menuBar.add(Calefaccion);
+		Calefaccion.setBackground(Color.black);
+		Calefaccion.setForeground(Color.white);
+		Calefaccion.setBorder(BorderFactory.createLineBorder(Color.white));
+		
+		Calefaccion1 = new JMenuItem("Primera planta");
+		menuBar.add(Calefaccion1);
+		Calefaccion1.setBackground(Color.LIGHT_GRAY);
+		Calefaccion1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent me) {
+				Calefaccion1.setBackground(Color.black);
+				Calefaccion1.setForeground(Color.white);
+			}
+			@Override
+			public void mouseExited(MouseEvent me) {
+				Calefaccion1.setBackground(Color.lightGray);
+				Calefaccion1.setForeground(Color.black);
+			}
+		});
 		Calefaccion1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-            	//Close actual frame and open another one
-            	planta1_calefaccion Planta1 = new planta1_calefaccion();
-            	Planta1.setVisible(true);
-            	dispose();
-            }
+			public void actionPerformed(ActionEvent ae) {
+				// Close actual frame and open another one
+				planta1_calefaccion Planta1 = new planta1_calefaccion();
+				Planta1.setVisible(true);
+				dispose();
+			}
 		});
-		Planta1.add(Calefaccion1);
 
-		Calefaccion2 = new JMenuItem("Calefacción");
-		Calefaccion2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-            	//Close actual frame and open another one
-            	planta2_calefaccion Planta2 = new planta2_calefaccion();
-            	Planta2.setVisible(true);
-            	dispose();
-            }
+		Calefaccion2 = new JMenuItem("Segunda planta");
+		menuBar.add(Calefaccion2);
+		Calefaccion2.setBackground(Color.LIGHT_GRAY);
+		Calefaccion2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Calefaccion2.setBackground(Color.black);
+				Calefaccion2.setForeground(Color.white);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				Calefaccion2.setBackground(Color.lightGray);
+				Calefaccion2.setForeground(Color.black);
+			}
 		});
-		Planta2.add(Calefaccion2);
-		
+		Calefaccion2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				// Close actual frame and open another one
+				planta2_calefaccion Planta2 = new planta2_calefaccion();
+				Planta2.setVisible(true);
+				dispose();
+			}
+		});
 	
 		
 	
@@ -1250,9 +1282,6 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 				output.newLine();
 				output.close();
 
-			}else {
-				btn.setToolTipText("encendido");
-
 			}
 			
 			
@@ -1279,8 +1308,6 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 				output.write("[" + formatter.format(date) + "] Encendiendo calefaccion " + n);
 				output.newLine();
 				output.close();
-
-			}else {
 
 			}
 			
