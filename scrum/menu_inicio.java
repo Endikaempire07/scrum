@@ -80,7 +80,6 @@ public class menu_inicio extends JFrame {
             	//Close actual frame and open another one
             	planta_baja_calefaccion menuCalefaccion = new planta_baja_calefaccion();
             	menuCalefaccion.setVisible(true);
-            	menuCalefaccion.setBounds(rootPane.getBounds());
             	menuCalefaccion.setLocationRelativeTo(rootPane);
             	dispose();
             }
@@ -102,7 +101,6 @@ public class menu_inicio extends JFrame {
             	//Close actual frame and open another one
             	planta_baja_alarmas menuAlarma = new planta_baja_alarmas();
             	menuAlarma.setVisible(true);
-            	menuAlarma.setBounds(rootPane.getBounds());
             	menuAlarma.setLocationRelativeTo(rootPane);
             	dispose();
             }

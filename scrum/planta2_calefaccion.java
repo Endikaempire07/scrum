@@ -169,7 +169,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	 */
 	public planta2_calefaccion() {
 		setResizable(false);
-		setTitle("Planta 2 Calefacción");
+		setTitle("Planta 2 Calefaccion");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 		
@@ -190,7 +190,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		
 
 		
-		Calefaccion = new JMenuItem("Calefacción");
+		Calefaccion = new JMenuItem("Calefaccion");
 		Calefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -203,7 +203,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		Planta0.add(Calefaccion);
 
 	
-		Calefaccion1 = new JMenuItem("Calefacción");
+		Calefaccion1 = new JMenuItem("Calefaccion");
 		Calefaccion1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -214,7 +214,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		});
 		Planta1.add(Calefaccion1);
 
-		Calefaccion2 = new JMenuItem("Calefacción");
+		Calefaccion2 = new JMenuItem("Calefaccion");
 		Calefaccion2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -645,7 +645,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		
 		E2 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E2, 14, SpringLayout.EAST, estado2);
-		sl_p.putConstraint(SpringLayout.EAST, E2, -1004, SpringLayout.EAST, p);
+		sl_p.putConstraint(SpringLayout.EAST, E2, 0, SpringLayout.EAST, btn2_p2c);
 		E2.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.NORTH, E2, 0, SpringLayout.NORTH, estado2);
 		p.add(E2);
@@ -692,9 +692,9 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(E9);
 		
 		estado10 = new JLabel("10");
+		sl_p.putConstraint(SpringLayout.WEST, estado10, 2, SpringLayout.EAST, E2);
 		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 0, SpringLayout.WEST, estado10);
 		sl_p.putConstraint(SpringLayout.NORTH, estado10, 0, SpringLayout.NORTH, estado2);
-		sl_p.putConstraint(SpringLayout.WEST, estado10, 17, SpringLayout.EAST, E2);
 		p.add(estado10);
 		
 		estado11 = new JLabel("11");
@@ -776,7 +776,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(estado17);
 		
 		estado18 = new JLabel("18");
-		sl_p.putConstraint(SpringLayout.EAST, E10, -48, SpringLayout.WEST, estado18);
+		sl_p.putConstraint(SpringLayout.EAST, E10, -13, SpringLayout.WEST, estado18);
 		sl_p.putConstraint(SpringLayout.NORTH, estado18, 0, SpringLayout.NORTH, estado2);
 		p.add(estado18);
 		
