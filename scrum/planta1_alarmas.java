@@ -77,6 +77,7 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 				try {
 					planta1_alarmas frame = new planta1_alarmas();
 					frame.setVisible(true);
+					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
