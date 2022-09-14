@@ -591,7 +591,6 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		pa.add(lbl_7);
 		
 		lbl_8 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.EAST, lbl_7, 0, SpringLayout.EAST, lbl_8);
 		sl_pa.putConstraint(SpringLayout.WEST, lbl_8, 20, SpringLayout.WEST, lblestado_8);
 		sl_pa.putConstraint(SpringLayout.NORTH, lbl_8, 0, SpringLayout.NORTH, lblestado_8);
 		lbl_8.setForeground(Color.RED);
@@ -599,12 +598,10 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		
 		lbl_14 = new JLabel("Apagado");
 		sl_pa.putConstraint(SpringLayout.EAST, btnEncender, 0, SpringLayout.EAST, lbl_14);
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_14, 0, SpringLayout.NORTH, lblestado_4);
 		lbl_14.setForeground(Color.RED);
 		pa.add(lbl_14);
 		
 		lbl_13 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_14, 0, SpringLayout.WEST, lbl_13);
 		lbl_13.setForeground(Color.RED);
 		pa.add(lbl_13);
 		
@@ -630,7 +627,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		pa.add(lblestado_9);
 		
 		lblestado_10 = new JLabel("10");
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_10, 25, SpringLayout.WEST, lblestado_10);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_10, 27, SpringLayout.WEST, lblestado_10);
 		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_10, 15, SpringLayout.NORTH, lblestado_9);
 		sl_pa.putConstraint(SpringLayout.EAST, lblestado_10, 0, SpringLayout.EAST, lblestado_9);
 		sl_pa.putConstraint(SpringLayout.NORTH, lbl_10, 0, SpringLayout.NORTH, lblestado_10);
@@ -642,37 +639,40 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		pa.add(lblestado_11);
 		
 		lblestado_12 = new JLabel("12");
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_12, 15, SpringLayout.NORTH, lblestado_11);
 		sl_pa.putConstraint(SpringLayout.NORTH, lbl_12, 0, SpringLayout.NORTH, lblestado_12);
 		sl_pa.putConstraint(SpringLayout.WEST, lbl_12, 25, SpringLayout.WEST, lblestado_12);
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_12, 0, SpringLayout.NORTH, lblestado_2);
 		sl_pa.putConstraint(SpringLayout.WEST, lblestado_12, 0, SpringLayout.WEST, lblestado_11);
 		pa.add(lblestado_12);
 		
 		lblestado_13 = new JLabel("13");
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_13, 15, SpringLayout.NORTH, lblestado_12);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_13, 0, SpringLayout.WEST, lblestado_12);
 		sl_pa.putConstraint(SpringLayout.NORTH, lbl_13, 0, SpringLayout.NORTH, lblestado_13);
 		sl_pa.putConstraint(SpringLayout.WEST, lbl_13, 25, SpringLayout.WEST, lblestado_13);
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_13, 0, SpringLayout.NORTH, lbl18);
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_13, 0, SpringLayout.WEST, lblestado_11);
 		pa.add(lblestado_13);
 		
 		lblestado_14 = new JLabel("14");
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_14, 0, SpringLayout.WEST, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_14, 15, SpringLayout.NORTH, lblestado_13);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_14, 0, SpringLayout.WEST, lblestado_13);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_14, 0, SpringLayout.NORTH, lblestado_14);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_14, 25, SpringLayout.WEST, lblestado_14);
 		sl_pa.putConstraint(SpringLayout.SOUTH, lblestado_14, 0, SpringLayout.SOUTH, btn18_p1c);
 		pa.add(lblestado_14);
 		
 		lblestado_15 = new JLabel("15");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_15, 0, SpringLayout.NORTH, lblestado_5);
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_15, 0, SpringLayout.WEST, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_15, 15, SpringLayout.NORTH, lblestado_14);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_15, 0, SpringLayout.WEST, lblestado_14);
 		pa.add(lblestado_15);
 		
 		lblestado_16 = new JLabel("16");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_16, 0, SpringLayout.NORTH, lblestado_6);
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_16, 0, SpringLayout.WEST, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_16, 15, SpringLayout.NORTH, lblestado_15);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_16, 0, SpringLayout.WEST, lblestado_15);
 		pa.add(lblestado_16);
 		
 		lbl_15 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_15, 0, SpringLayout.NORTH, lblestado_5);
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_15, 0, SpringLayout.WEST, lbl_14);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_15, 0, SpringLayout.NORTH, lblestado_15);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_15, 25, SpringLayout.WEST, lblestado_15);
 		lbl_15.setForeground(Color.RED);
 		pa.add(lbl_15);
 		
@@ -689,79 +689,80 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		pa.add(lbl_9);
 		
 		lbl_17 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_17, 0, SpringLayout.NORTH, lbl_7);
-		sl_pa.putConstraint(SpringLayout.EAST, lbl_17, 0, SpringLayout.EAST, lbl_14);
 		lbl_17.setForeground(Color.RED);
 		pa.add(lbl_17);
 		
 		lbl_19 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_19, 0, SpringLayout.NORTH, lblestado_9);
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_19, 0, SpringLayout.WEST, lbl_14);
 		lbl_19.setForeground(Color.RED);
 		pa.add(lbl_19);
 		
 		lbl_20 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_20, 0, SpringLayout.NORTH, lbl_10);
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_20, 0, SpringLayout.WEST, lbl_14);
 		lbl_20.setForeground(Color.RED);
 		pa.add(lbl_20);
 		
 		lbl_23 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_23, 0, SpringLayout.NORTH, lbl18);
-		sl_pa.putConstraint(SpringLayout.EAST, lbl_23, 0, SpringLayout.EAST, lbl5);
 		lbl_23.setForeground(Color.RED);
 		pa.add(lbl_23);
 		
 		lblestado_17 = new JLabel("17");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_17, 0, SpringLayout.NORTH, lbl_7);
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_17, 0, SpringLayout.WEST, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_17, 15, SpringLayout.NORTH, lblestado_16);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_17, 0, SpringLayout.WEST, lblestado_16);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_17, 0, SpringLayout.NORTH, lblestado_17);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_17, 25, SpringLayout.WEST, lblestado_17);
 		pa.add(lblestado_17);
 		
 		lblestado_18 = new JLabel("18");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_18, 0, SpringLayout.NORTH, lblestado_8);
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_18, 0, SpringLayout.WEST, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_18, 15, SpringLayout.NORTH, lblestado_17);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_18, 0, SpringLayout.WEST, lblestado_17);
 		pa.add(lblestado_18);
 		
 		lblestado_19 = new JLabel("19");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_19, 0, SpringLayout.NORTH, lblestado_9);
-		sl_pa.putConstraint(SpringLayout.WEST, lblestado_19, 0, SpringLayout.WEST, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_19, 15, SpringLayout.NORTH, lblestado_18);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_19, 0, SpringLayout.WEST, lblestado_18);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_19, 0, SpringLayout.NORTH, lblestado_19);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_19, 25, SpringLayout.WEST, lblestado_19);
 		pa.add(lblestado_19);
 		
 		lblestado_20 = new JLabel("20");
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_20, 0, SpringLayout.WEST, lblestado_19);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_20, 0, SpringLayout.NORTH, lblestado_20);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_20, 25, SpringLayout.WEST, lblestado_20);
 		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_20, 15, SpringLayout.NORTH, lblestado_19);
 		sl_pa.putConstraint(SpringLayout.EAST, lblestado_20, 0, SpringLayout.EAST, lblestado_19);
 		pa.add(lblestado_20);
 		
 		lblestado_21 = new JLabel("21");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_21, 0, SpringLayout.NORTH, lblestado_1);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_21, 0, SpringLayout.NORTH, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_21, 100, SpringLayout.WEST, lblestado_11);
 		pa.add(lblestado_21);
 		
 		lblestado_22 = new JLabel("22");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_22, 0, SpringLayout.NORTH, lblestado_2);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_22, 15, SpringLayout.NORTH, lblestado_21);
 		sl_pa.putConstraint(SpringLayout.WEST, lblestado_22, 0, SpringLayout.WEST, lblestado_21);
 		pa.add(lblestado_22);
 		
 		lblestado_23 = new JLabel("23");
-		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_23, 0, SpringLayout.NORTH, lbl18);
-		sl_pa.putConstraint(SpringLayout.EAST, lblestado_23, -6, SpringLayout.WEST, lbl_23);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_23, 0, SpringLayout.NORTH, lblestado_23);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_23, 25, SpringLayout.WEST, lblestado_23);
+		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_23, 15, SpringLayout.NORTH, lblestado_22);
+		sl_pa.putConstraint(SpringLayout.WEST, lblestado_23, 0, SpringLayout.WEST, lblestado_22);
 		pa.add(lblestado_23);
 		
 		lbl_22 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_22, 0, SpringLayout.NORTH, lblestado_2);
-		sl_pa.putConstraint(SpringLayout.EAST, lbl_22, 0, SpringLayout.EAST, lbl5);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_22, 0, SpringLayout.NORTH, lblestado_22);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_22, 25, SpringLayout.WEST, lblestado_22);
 		lbl_22.setForeground(Color.RED);
 		pa.add(lbl_22);
 		
 		lbl_11 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_11, 135, SpringLayout.WEST, pa);
-		sl_pa.putConstraint(SpringLayout.EAST, lblestado_11, -6, SpringLayout.WEST, lbl_11);
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_11, 0, SpringLayout.NORTH, lblestado_1);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_11, 0, SpringLayout.NORTH, lblestado_11);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_11, 25, SpringLayout.WEST, lblestado_11);
 		lbl_11.setForeground(Color.RED);
 		pa.add(lbl_11);
 		
 		lbl_18 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_18, 0, SpringLayout.NORTH, lblestado_8);
-		sl_pa.putConstraint(SpringLayout.EAST, lbl_18, 0, SpringLayout.EAST, lbl_14);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_18, 0, SpringLayout.NORTH, lblestado_18);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_18, 25, SpringLayout.WEST, lblestado_18);
 		lbl_18.setForeground(Color.RED);
 		pa.add(lbl_18);
 		
@@ -784,15 +785,15 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		pa.add(lbl_2);
 		
 		lbl_21 = new JLabel("Apagado");
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_21, 0, SpringLayout.NORTH, lblestado_21);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_21, 25, SpringLayout.WEST, lblestado_21);
 		sl_pa.putConstraint(SpringLayout.EAST, lblestado_21, -6, SpringLayout.WEST, lbl_21);
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_21, 0, SpringLayout.NORTH, lblestado_1);
-		sl_pa.putConstraint(SpringLayout.EAST, lbl_21, 0, SpringLayout.EAST, lbl5);
 		lbl_21.setForeground(Color.RED);
 		pa.add(lbl_21);
 		
 		lbl_16 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.NORTH, lbl_16, 0, SpringLayout.NORTH, lblestado_6);
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_16, 0, SpringLayout.WEST, lbl_14);
+		sl_pa.putConstraint(SpringLayout.NORTH, lbl_16, 0, SpringLayout.NORTH, lblestado_16);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_16, 25, SpringLayout.WEST, lblestado_16);
 		lbl_16.setForeground(Color.RED);
 		pa.add(lbl_16);
 		
@@ -935,30 +936,6 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
             	apagarTodo();
             }
 		});
-		
-		/*btn1_p1c.setToolTipText("apagado");
-		btn2_p1c.setToolTipText("apagado");
-		btn3_p1c.setToolTipText("apagado");
-		btn4_p1c.setToolTipText("apagado");
-		btn5_p1c.setToolTipText("apagado");
-		btn6_p1c.setToolTipText("apagado");
-		btn7_p1c.setToolTipText("apagado");
-		btn8_p1c.setToolTipText("apagado");
-		btn9_p1c.setToolTipText("apagado");
-		btn10_p1c.setToolTipText("apagado");
-		btn11_p1c.setToolTipText("apagado");
-		btn12_p1c.setToolTipText("apagado");
-		btn13_p1c.setToolTipText("apagado");
-		btn14_p1c.setToolTipText("apagado");
-		btn15_p1c.setToolTipText("apagado");
-		btn16_p1c.setToolTipText("apagado");
-		btn17_p1c.setToolTipText("apagado");
-		btn18_p1c.setToolTipText("apagado");
-		btn19_p1c.setToolTipText("apagado");
-		btn20_p1c.setToolTipText("apagado");
-		btn21_p1c.setToolTipText("apagado");
-		btn22_p1c.setToolTipText("apagado");
-		btn23_p1c.setToolTipText("apagado");*/
 		
 		botones.add(btn1_p1c);
 		botones.add(btn2_p1c);		botones.add(btn3_p1c);		botones.add(btn4_p1c);
