@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
@@ -50,6 +51,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	private JMenuBar menuBar;
 	private JMenu Planta0, Planta1, Planta2;
 	private JMenuItem Calefaccion,Calefaccion1,Calefaccion2;
+	ArrayList<JButton> botones = new ArrayList<JButton>();
 	
 	private JButton btnEncender;
 	private JButton btn1_p1c;
@@ -934,7 +936,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
             }
 		});
 		
-		btn1_p1c.setToolTipText("apagado");
+		/*btn1_p1c.setToolTipText("apagado");
 		btn2_p1c.setToolTipText("apagado");
 		btn3_p1c.setToolTipText("apagado");
 		btn4_p1c.setToolTipText("apagado");
@@ -956,7 +958,29 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		btn20_p1c.setToolTipText("apagado");
 		btn21_p1c.setToolTipText("apagado");
 		btn22_p1c.setToolTipText("apagado");
-		btn23_p1c.setToolTipText("apagado");
+		btn23_p1c.setToolTipText("apagado");*/
+		
+		botones.add(btn1_p1c);
+		botones.add(btn2_p1c);		botones.add(btn3_p1c);		botones.add(btn4_p1c);
+		botones.add(btn5_p1c);		botones.add(btn6_p1c);		botones.add(btn7_p1c);
+		botones.add(btn8_p1c);		botones.add(btn9_p1c);		botones.add(btn10_p1c);
+		botones.add(btn11_p1c);
+		botones.add(btn12_p1c);
+		botones.add(btn13_p1c);
+		botones.add(btn14_p1c);
+		botones.add(btn15_p1c);
+		botones.add(btn16_p1c);
+		botones.add(btn17_p1c);
+		botones.add(btn18_p1c);
+		botones.add(btn19_p1c);
+		botones.add(btn20_p1c);
+		botones.add(btn21_p1c);
+		botones.add(btn22_p1c);
+		botones.add(btn23_p1c);
+		
+		for (JButton jButton : botones) {
+			jButton.setToolTipText("apagado");
+		}
 		
 	}
 
@@ -1007,18 +1031,18 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	}
 	
 	public void encenderTodo() {
-		Component[] componentes = this.getComponents();
-		for (Component component : componentes) {
-			if (component instanceof JButton) {
-				System.out.println("boton encontrado");
-				if (((JButton) component).getToolTipText() == "apagado") {
-					((JButton) component).doClick();
-				}
+		for (JButton jButton : botones) {
+			if (jButton.getToolTipText() == "apagado") {
+				jButton.doClick();
 			}
 		}
 	}
 	
 	public void apagarTodo() {
-		
+		for (JButton jButton : botones) {
+			if (jButton.getToolTipText() == "encendido") {
+				jButton.doClick();
+			}
+		}
 	}
 }
