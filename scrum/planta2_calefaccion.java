@@ -5,21 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -30,9 +24,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
-import javax.swing.JScrollPane;
 import javax.swing.SpringLayout;
-import java.awt.Dimension;
 import java.awt.Font;
 
 public class planta2_calefaccion extends JFrame implements ActionListener{
@@ -45,7 +37,6 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	private JMenu Planta0, Planta1, Planta2;
 	private JMenuItem Calefaccion,Calefaccion1,Calefaccion2;
 	private JButton btnCalefaccionA;
-	private JButton btnMenu_p2c;
 	private JButton btn1_p2c;
 	private JLabel lblestado;
 	private JLabel lbl1;
@@ -241,6 +232,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.setLayout(sl_p);
 		
 		btnCalefaccionA = new JButton("Apagar Todo");
+		sl_p.putConstraint(SpringLayout.SOUTH, btnCalefaccionA, -66, SpringLayout.SOUTH, p);
 		btnCalefaccionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -273,27 +265,12 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		});
 		p.add(btnCalefaccionA);
 		
-		btnMenu_p2c = new JButton("Men\u00FA");
-		sl_p.putConstraint(SpringLayout.SOUTH, btnMenu_p2c, -66, SpringLayout.SOUTH, p);
-		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionA, 0, SpringLayout.NORTH, btnMenu_p2c);
-		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 17, SpringLayout.EAST, btnMenu_p2c);
-		p.add(btnMenu_p2c);
-		btnMenu_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				//Close actual frame and open another one
-            	menu_inicio menu = new menu_inicio();
-            	menu.setVisible(true);
-            	dispose();
-			}
-		});
-		
 		lblestado = new JLabel("Estado");
-		sl_p.putConstraint(SpringLayout.WEST, btnMenu_p2c, 0, SpringLayout.WEST, lblestado);
 		lblestado.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		p.add(lblestado);
 		
 		btn1_p2c = new JButton("");
+		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 0, SpringLayout.WEST, btn1_p2c);
 		btn1_p2c.setToolTipText("apagado");
 		
 		sl_p.putConstraint(SpringLayout.EAST, lblestado, 62, SpringLayout.EAST, btn1_p2c);
@@ -946,9 +923,9 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.NORTH, estado9, 0, SpringLayout.NORTH, estado1);
 		p.add(estado9);
 		
-		btnCalefaccionE = new JButton("apagar Todo");
+		btnCalefaccionE = new JButton("Encender Todo");
 		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionE, 0, SpringLayout.NORTH, btnCalefaccionA);
-		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionE, 6, SpringLayout.EAST, btnCalefaccionA);
+		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionE, 0, SpringLayout.WEST, lbl3);
 		btnCalefaccionE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				encender(btn1_p2c, E1,lbl1);
@@ -1196,6 +1173,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		
 		
 		
+		@SuppressWarnings("unused")
 		SpringLayout sl_contentPane = new SpringLayout();
 		
 		
