@@ -19,6 +19,8 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -147,7 +149,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	private JLabel estado9;
 	private JMenuBar menuBar;
 	File logFile = new File("log_Planta2.txt");
-	private JButton btnCalefaccioneE;
+	private JButton btnCalefaccionE;
 	/**
 	 * Launch the application.
 	 */
@@ -169,7 +171,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	 */
 	public planta2_calefaccion() {
 		setResizable(false);
-		setTitle("Planta 2 Calefaccion");
+		setTitle("Planta 2 Calefacción");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 		
@@ -190,7 +192,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		
 
 		
-		Calefaccion = new JMenuItem("Calefaccion");
+		Calefaccion = new JMenuItem("Calefacción");
 		Calefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -203,7 +205,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		Planta0.add(Calefaccion);
 
 	
-		Calefaccion1 = new JMenuItem("Calefaccion");
+		Calefaccion1 = new JMenuItem("Calefacción");
 		Calefaccion1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -214,7 +216,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		});
 		Planta1.add(Calefaccion1);
 
-		Calefaccion2 = new JMenuItem("Calefaccion");
+		Calefaccion2 = new JMenuItem("Calefacción");
 		Calefaccion2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -242,15 +244,39 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		btnCalefaccionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				apagar(btn1_p2c, E1,lbl1);
+				apagar(btn2_p2c, E2,lbl2);
+				apagar(btn3_p2c, E3,lbl3);
+				apagar(btn4_p2c, E4,lbl4);
+				apagar(btn5_p2c, E5,lbl5);
+				apagar(btn6_p2c, E6,lbl6);
+				apagar(btn7_p2c, E7,lbl7);
+				apagar(btn8_p2c, E8,lbl8);
+				apagar(btn9_p2c, E9,lbl9);
+				apagar(btn10_p2c, E10,lbl10);
+				apagar(btn11_p2c, E11,lbl11);
+				apagar(btn12_p2c, E12,lbl12);
+				apagar(btn13_p2c, E13,lbl13);
+				apagar(btn14_p2c, E14,lbl14);
+				apagar(btn15_p2c, E15,lbl15);
+				apagar(btn16_p2c, E16,lbl16);
+				apagar(btn17_p2c, E17,lbl17);
+				apagar(btn18_p2c, E18,lbl18);
+				apagar(btn19_p2c, E19,lbl19);
+				apagar(btn20_p2c, E20,lbl20);
+				apagar(btn21_p2c, E21,lbl21);
+				apagar(btn22_p2c, E22,lbl22);
+				apagar(btn23_p2c, E23,lbl23);
+				apagar(btn24_p2c, E24,lbl24);
+				apagar(btn25_p2c, E25,lbl25);
 			}
 		});
 		p.add(btnCalefaccionA);
 		
 		btnMenu_p2c = new JButton("Men\u00FA");
-		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionA, 0, SpringLayout.NORTH, btnMenu_p2c);
-		sl_p.putConstraint(SpringLayout.WEST, btnMenu_p2c, 49, SpringLayout.WEST, p);
 		sl_p.putConstraint(SpringLayout.SOUTH, btnMenu_p2c, -66, SpringLayout.SOUTH, p);
+		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionA, 0, SpringLayout.NORTH, btnMenu_p2c);
+		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 17, SpringLayout.EAST, btnMenu_p2c);
 		p.add(btnMenu_p2c);
 		btnMenu_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -263,10 +289,12 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		});
 		
 		lblestado = new JLabel("Estado");
+		sl_p.putConstraint(SpringLayout.WEST, btnMenu_p2c, 0, SpringLayout.WEST, lblestado);
 		lblestado.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		p.add(lblestado);
 		
 		btn1_p2c = new JButton("");
+		btn1_p2c.setToolTipText("apagado");
 		
 		sl_p.putConstraint(SpringLayout.EAST, lblestado, 62, SpringLayout.EAST, btn1_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn1_p2c, 0, SpringLayout.NORTH, p);
@@ -283,6 +311,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl1);
 		
 		btn2_p2c = new JButton("");
+		btn2_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn2_p2c, 82, SpringLayout.SOUTH, btn1_p2c);
 		sl_p.putConstraint(SpringLayout.EAST, btn2_p2c, -989, SpringLayout.EAST, p);
 		btn2_p2c.setIcon(new ImageIcon(planta2_calefaccion.class.getResource("/imagenes/calefaccion.png")));
@@ -295,6 +324,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl2);
 		
 		btn3_p2c = new JButton("");
+		btn3_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.SOUTH, btn2_p2c, -8, SpringLayout.SOUTH, btn3_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn3_p2c, 123, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn3_p2c, 188, SpringLayout.WEST, p);
@@ -309,6 +339,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl3);
 		
 		btn4_p2c = new JButton("");
+		btn4_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.EAST, btn1_p2c, -236, SpringLayout.WEST, btn4_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn4_p2c, 15, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn4_p2c, 49, SpringLayout.NORTH, p);
@@ -323,6 +354,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl4);
 		
 		btn5_p2c = new JButton("");
+		btn5_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn5_p2c, 79, SpringLayout.SOUTH, btn4_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn5_p2c, 0, SpringLayout.WEST, btn4_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn5_p2c, 0, SpringLayout.SOUTH, btn3_p2c);
@@ -336,6 +368,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl5);
 		
 		btn6_p2c = new JButton("");
+		btn6_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn6_p2c, 15, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn6_p2c, 103, SpringLayout.EAST, btn4_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn6_p2c, 0, SpringLayout.SOUTH, btn4_p2c);
@@ -349,6 +382,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl6);
 		
 		btn7_p2c = new JButton("");
+		btn7_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn7_p2c, 69, SpringLayout.SOUTH, btn6_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn7_p2c, 101, SpringLayout.EAST, btn5_p2c);
 		sl_p.putConstraint(SpringLayout.EAST, btn7_p2c, 5, SpringLayout.EAST, btn6_p2c);
@@ -361,6 +395,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl7);
 		
 		btn9_p2c = new JButton("");
+		btn9_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn9_p2c, 38, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn9_p2c, 200, SpringLayout.EAST, btn6_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn9_p2c, 10, SpringLayout.SOUTH, btn4_p2c);
@@ -369,6 +404,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn9_p2c);
 		
 		btn8_p2c = new JButton("");
+		btn8_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn8_p2c, 0, SpringLayout.NORTH, lbl4);
 		sl_p.putConstraint(SpringLayout.WEST, btn8_p2c, 41, SpringLayout.EAST, btn6_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn8_p2c, 58, SpringLayout.NORTH, p);
@@ -387,6 +423,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl9);
 		
 		btn10_p2c = new JButton("");
+		btn10_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn10_p2c, 8, SpringLayout.NORTH, btn1_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn10_p2c, 0, SpringLayout.SOUTH, btn4_p2c);
 		sl_p.putConstraint(SpringLayout.EAST, btn10_p2c, 101, SpringLayout.EAST, btn9_p2c);
@@ -394,6 +431,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn10_p2c);
 		
 		btn11_p2c = new JButton("");
+		btn11_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn11_p2c, 134, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn11_p2c, 228, SpringLayout.EAST, btn7_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn11_p2c, 45, SpringLayout.NORTH, btn3_p2c);
@@ -413,6 +451,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl11);
 		
 		btn12_p2c = new JButton("");
+		btn12_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn12_p2c, 8, SpringLayout.NORTH, btn2_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn12_p2c, 85, SpringLayout.EAST, btn11_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn12_p2c, 0, SpringLayout.SOUTH, btn3_p2c);
@@ -426,6 +465,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl12);
 		
 		btn13_p2c = new JButton("");
+		btn13_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn13_p2c, 0, SpringLayout.NORTH, btn1_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn13_p2c, 49, SpringLayout.EAST, btn10_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn13_p2c, -123, SpringLayout.SOUTH, btn12_p2c);
@@ -439,6 +479,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl13);
 		
 		btn14_p2c = new JButton("");
+		btn14_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.WEST, btn14_p2c, -93, SpringLayout.EAST, p);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn14_p2c, 29, SpringLayout.NORTH, btn4_p2c);
 		btn14_p2c.setIcon(new ImageIcon(planta2_calefaccion.class.getResource("/imagenes/calefaccion.png")));
@@ -452,6 +493,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl14);
 		
 		btn15_p2c = new JButton("");
+		btn15_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn15_p2c, 26, SpringLayout.SOUTH, btn14_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn15_p2c, 46, SpringLayout.WEST, btn14_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn15_p2c, -64, SpringLayout.SOUTH, btn11_p2c);
@@ -465,6 +507,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl15);
 		
 		btn16_p2c = new JButton("");
+		btn16_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn16_p2c, 21, SpringLayout.SOUTH, lbl15);
 		sl_p.putConstraint(SpringLayout.WEST, btn16_p2c, 0, SpringLayout.WEST, btn14_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn16_p2c, 0, SpringLayout.SOUTH, btn3_p2c);
@@ -522,6 +565,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lbl22);
 		
 		btn17_p2c = new JButton("");
+		btn17_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn17_p2c, 219, SpringLayout.SOUTH, btn8_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn17_p2c, -249, SpringLayout.SOUTH, p);
 		sl_p.putConstraint(SpringLayout.NORTH, lbl17, 6, SpringLayout.SOUTH, btn17_p2c);
@@ -531,6 +575,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn17_p2c);
 		
 		btn18_p2c = new JButton("");
+		btn18_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.SOUTH, lblestado, 0, SpringLayout.SOUTH, btn18_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn18_p2c, 119, SpringLayout.SOUTH, btn9_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn18_p2c, 660, SpringLayout.WEST, p);
@@ -540,6 +585,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn18_p2c);
 		
 		btn19_p2c = new JButton("");
+		btn19_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn19_p2c, 0, SpringLayout.NORTH, btn17_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn19_p2c, -28, SpringLayout.EAST, lbl9);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn19_p2c, -6, SpringLayout.NORTH, lbl19);
@@ -548,6 +594,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn19_p2c);
 		
 		btn20_p2c = new JButton("");
+		btn20_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn20_p2c, -167, SpringLayout.SOUTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn20_p2c, -63, SpringLayout.WEST, lbl20);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn20_p2c, 0, SpringLayout.SOUTH, lbl25);
@@ -556,6 +603,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn20_p2c);
 		
 		btn21_p2c = new JButton("");
+		btn21_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.SOUTH, btn7_p2c, -226, SpringLayout.NORTH, btn21_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn21_p2c, 8, SpringLayout.NORTH, lbl20);
 		sl_p.putConstraint(SpringLayout.WEST, btn21_p2c, -34, SpringLayout.WEST, btn17_p2c);
@@ -565,6 +613,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn21_p2c);
 		
 		btn22_p2c = new JButton("");
+		btn22_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn22_p2c, 10, SpringLayout.NORTH, lbl25);
 		sl_p.putConstraint(SpringLayout.WEST, btn22_p2c, 39, SpringLayout.EAST, btn20_p2c);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn22_p2c, 0, SpringLayout.SOUTH, lbl22);
@@ -578,6 +627,8 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.SOUTH, btn23_p2c, -98, SpringLayout.SOUTH, p);
 		sl_p.putConstraint(SpringLayout.EAST, btn23_p2c, 67, SpringLayout.EAST, lbl23);
 		btn23_p2c.setIcon(new ImageIcon(planta2_calefaccion.class.getResource("/imagenes/calefaccion.png")));
+		btn23_p2c.setToolTipText("apagado");
+
 		p.add(btn23_p2c);
 		
 		btn24_p2c = new JButton("");
@@ -586,6 +637,8 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.SOUTH, btn24_p2c, -10, SpringLayout.SOUTH, lbl22);
 		sl_p.putConstraint(SpringLayout.EAST, btn24_p2c, -15, SpringLayout.EAST, lbl11);
 		btn24_p2c.setIcon(new ImageIcon(planta2_calefaccion.class.getResource("/imagenes/calefaccion.png")));
+		btn24_p2c.setToolTipText("apagado");
+
 		p.add(btn24_p2c);
 		
 		btn25_p2c = new JButton("");
@@ -593,6 +646,8 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.WEST, btn25_p2c, -62, SpringLayout.EAST, lbl25);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn25_p2c, 201, SpringLayout.NORTH, lbl18);
 		sl_p.putConstraint(SpringLayout.EAST, btn25_p2c, -6, SpringLayout.WEST, lbl25);
+		btn25_p2c.setToolTipText("apagado");
+
 		btn25_p2c.setIcon(new ImageIcon(planta2_calefaccion.class.getResource("/imagenes/calefaccion.png")));
 		p.add(btn25_p2c);
 		
@@ -652,36 +707,42 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		
 		E3 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E3, 14, SpringLayout.EAST, estado3);
+		sl_p.putConstraint(SpringLayout.EAST, E3, 0, SpringLayout.EAST, btn2_p2c);
 		E3.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.SOUTH, E3, 0, SpringLayout.SOUTH, estado3);
 		p.add(E3);
 		
 		E4 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E4, 14, SpringLayout.EAST, estado4);
+		sl_p.putConstraint(SpringLayout.EAST, E4, 0, SpringLayout.EAST, btn2_p2c);
 		E4.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.NORTH, E4, 0, SpringLayout.NORTH, estado4);
 		p.add(E4);
 		
 		E5 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E5, 14, SpringLayout.EAST, estado5);
+		sl_p.putConstraint(SpringLayout.EAST, E5, 0, SpringLayout.EAST, btn2_p2c);
 		E5.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.NORTH, E5, 0, SpringLayout.NORTH, lbl19);
 		p.add(E5);
 		
 		E6 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E6, 14, SpringLayout.EAST, estado6);
+		sl_p.putConstraint(SpringLayout.EAST, E6, 0, SpringLayout.EAST, btn2_p2c);
 		E6.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.NORTH, E6, 0, SpringLayout.NORTH, estado6);
 		p.add(E6);
 		
 		E7 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E7, 14, SpringLayout.EAST, estado7);
+		sl_p.putConstraint(SpringLayout.EAST, E7, 0, SpringLayout.EAST, btn2_p2c);
 		E7.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.NORTH, E7, 0, SpringLayout.NORTH, estado7);
 		p.add(E7);
 		
 		E8 = new JLabel("Apagado");
 		sl_p.putConstraint(SpringLayout.WEST, E8, 14, SpringLayout.EAST, estado8);
+		sl_p.putConstraint(SpringLayout.EAST, E8, 0, SpringLayout.EAST, btn2_p2c);
 		E8.setForeground(Color.RED);
 		sl_p.putConstraint(SpringLayout.NORTH, E8, 0, SpringLayout.NORTH, estado8);
 		p.add(E8);
@@ -692,13 +753,11 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(E9);
 		
 		estado10 = new JLabel("10");
-		sl_p.putConstraint(SpringLayout.WEST, estado10, 2, SpringLayout.EAST, E2);
-		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 0, SpringLayout.WEST, estado10);
 		sl_p.putConstraint(SpringLayout.NORTH, estado10, 0, SpringLayout.NORTH, estado2);
+		sl_p.putConstraint(SpringLayout.WEST, estado10, 2, SpringLayout.EAST, E2);
 		p.add(estado10);
 		
 		estado11 = new JLabel("11");
-		sl_p.putConstraint(SpringLayout.EAST, E3, -17, SpringLayout.WEST, estado11);
 		sl_p.putConstraint(SpringLayout.NORTH, estado11, 0, SpringLayout.NORTH, estado3);
 		sl_p.putConstraint(SpringLayout.EAST, estado11, 0, SpringLayout.EAST, estado10);
 		p.add(estado11);
@@ -776,7 +835,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(estado17);
 		
 		estado18 = new JLabel("18");
-		sl_p.putConstraint(SpringLayout.EAST, E10, -13, SpringLayout.WEST, estado18);
+		sl_p.putConstraint(SpringLayout.EAST, E10, -6, SpringLayout.WEST, estado18);
 		sl_p.putConstraint(SpringLayout.NORTH, estado18, 0, SpringLayout.NORTH, estado2);
 		p.add(estado18);
 		
@@ -887,14 +946,46 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		sl_p.putConstraint(SpringLayout.NORTH, estado9, 0, SpringLayout.NORTH, estado1);
 		p.add(estado9);
 		
-		btnCalefaccioneE = new JButton("Encender Todo");
-		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccioneE, 0, SpringLayout.NORTH, btnCalefaccionA);
-		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccioneE, 23, SpringLayout.EAST, btnCalefaccionA);
-		p.add(btnCalefaccioneE);
+		btnCalefaccionE = new JButton("apagar Todo");
+		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionE, 0, SpringLayout.NORTH, btnCalefaccionA);
+		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionE, 6, SpringLayout.EAST, btnCalefaccionA);
+		btnCalefaccionE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				encender(btn1_p2c, E1,lbl1);
+				encender(btn2_p2c, E2,lbl2);
+				encender(btn3_p2c, E3,lbl3);
+				encender(btn4_p2c, E4,lbl4);
+				encender(btn5_p2c, E5,lbl5);
+				encender(btn6_p2c, E6,lbl6);
+				encender(btn7_p2c, E7,lbl7);
+				encender(btn8_p2c, E8,lbl8);
+				encender(btn9_p2c, E9,lbl9);
+				encender(btn10_p2c, E10,lbl10);
+				encender(btn11_p2c, E11,lbl11);
+				encender(btn12_p2c, E12,lbl12);
+				encender(btn13_p2c, E13,lbl13);
+				encender(btn14_p2c, E14,lbl14);
+				encender(btn15_p2c, E15,lbl15);
+				encender(btn16_p2c, E16,lbl16);
+				encender(btn17_p2c, E17,lbl17);
+				encender(btn18_p2c, E18,lbl18);
+				encender(btn19_p2c, E19,lbl19);
+				encender(btn20_p2c, E20,lbl20);
+				encender(btn21_p2c, E21,lbl21);
+				encender(btn22_p2c, E22,lbl22);
+				encender(btn23_p2c, E23,lbl23);
+				encender(btn24_p2c, E24,lbl24);
+				encender(btn25_p2c, E25,lbl25);
+		
+			}
+		});
+		p.add(btnCalefaccionE);
 		
 		btn1_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn1_p2c, E1,lbl1);
+				
+				
 			}
 				
 				
@@ -1155,6 +1246,64 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 				output.newLine();
 				output.close();
 				
+			}
+			
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			System.out.println("error de escritura");
+		}
+	}
+	public void apagar(JButton btn, JLabel lbl, JLabel lbl1) {
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+		Date date = new Date(System.currentTimeMillis());
+		
+		try {
+			
+			if (btn.getToolTipText() == "encendido") {
+				
+				btn.setToolTipText("apagado");
+				int n = Integer.parseInt(lbl1.getText());
+
+				lbl.setForeground(Color.red);
+				lbl.setText("Apagado");
+	
+				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
+				output.write("[" + formatter.format(date) + "] Apagando calefaccion " + n);
+				output.newLine();
+				output.close();
+
+			}else {
+				btn.setToolTipText("encendido");
+
+			}
+			
+			
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			System.out.println("error de escritura");
+		}
+	}
+	public void encender(JButton btn, JLabel lbl, JLabel lbl1) {
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+		Date date = new Date(System.currentTimeMillis());
+		
+		try {
+			
+			if (btn.getToolTipText() == "apagado") {
+				
+				btn.setToolTipText("encendido");
+				int n = Integer.parseInt(lbl1.getText());
+
+				lbl.setForeground(Color.GREEN);
+				lbl.setText("Encendido");
+	
+				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
+				output.write("[" + formatter.format(date) + "] Encendiendo calefaccion " + n);
+				output.newLine();
+				output.close();
+
+			}else {
+
 			}
 			
 		} catch (IOException e1) {
