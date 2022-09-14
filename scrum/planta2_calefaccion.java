@@ -164,7 +164,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	 */
 	public planta2_calefaccion() {
 		setResizable(false);
-		setTitle("Planta 2 Calefacci�n");
+		setTitle("Planta 2 Calefaccion");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 		
