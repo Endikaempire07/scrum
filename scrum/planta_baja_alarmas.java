@@ -5,8 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -18,7 +16,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.SpringLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public class planta_baja_alarmas extends JFrame implements ActionListener {
@@ -364,11 +361,22 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 		
 		for (JButton boton : botones) {
 			boton.setBorder(BorderFactory.createLineBorder(Color.black));
+			boton.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					cambiar(boton);
+				}
+				
+			});
 			int temp = (Math.random() <= 0.5) ? 1 : 2;
 			if (temp==1) {
 				boton.setBackground(Color.RED);
+				boton.setToolTipText("apagado");
 			}else {
 				boton.setBackground(Color.green);
+				boton.setToolTipText("encendido");
 			}
 		}
 
@@ -376,10 +384,16 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 
 	}
 	
-	
+	public void cambiar(JButton btn) {
+		if (btn.getToolTipText() == "encendido") {
+			btn.setToolTipText("apagado");
+			btn.setBackground(Color.RED);
+		}
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 }

@@ -96,7 +96,7 @@ public class planta2_alarmas extends JFrame {
 		menuBar.setForeground(Color.WHITE);
 		menuBar.setBackground(Color.GRAY);
 		setJMenuBar(menuBar);
-		
+
 		Menu = new JMenuItem("Menu");
 		menuBar.add(Menu);
 		Menu.setBackground(Color.LIGHT_GRAY);
@@ -106,8 +106,9 @@ public class planta2_alarmas extends JFrame {
 				Menu.setBackground(Color.black);
 				Menu.setForeground(Color.white);
 			}
+
 			@Override
-			public void mouseExited(MouseEvent me){
+			public void mouseExited(MouseEvent me) {
 				Menu.setBackground(Color.LIGHT_GRAY);
 				Menu.setForeground(Color.black);
 			}
@@ -120,7 +121,7 @@ public class planta2_alarmas extends JFrame {
 				dispose();
 			}
 		});
-		
+
 		Alarmas = new JMenuItem("Planta baja");
 		menuBar.add(Alarmas);
 		Alarmas.setBackground(Color.LIGHT_GRAY);
@@ -130,6 +131,7 @@ public class planta2_alarmas extends JFrame {
 				Alarmas.setBackground(Color.black);
 				Alarmas.setForeground(Color.white);
 			}
+
 			@Override
 			public void mouseExited(MouseEvent e) {
 				Alarmas.setBackground(Color.lightGray);
@@ -144,7 +146,7 @@ public class planta2_alarmas extends JFrame {
 				dispose();
 			}
 		});
-		
+
 		Alarmas1 = new JMenuItem("Primera planta");
 		menuBar.add(Alarmas1);
 		Alarmas1.setBackground(Color.LIGHT_GRAY);
@@ -154,6 +156,7 @@ public class planta2_alarmas extends JFrame {
 				Alarmas1.setBackground(Color.black);
 				Alarmas1.setForeground(Color.white);
 			}
+
 			@Override
 			public void mouseExited(MouseEvent me) {
 				Alarmas1.setBackground(Color.lightGray);
@@ -174,21 +177,19 @@ public class planta2_alarmas extends JFrame {
 		Alarmas2.setBackground(Color.black);
 		Alarmas2.setForeground(Color.white);
 		Alarmas2.setBorder(BorderFactory.createLineBorder(Color.white));
-	
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
+
 		Panelimagen_planta2 p = new Panelimagen_planta2();
 		p.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(p);
-		
+
 		SpringLayout sl_p = new SpringLayout();
 		p.setLayout(sl_p);
-		
-		
-		
+
 		botones = new ArrayList<JButton>();
-		
+
 		btn1_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn1_p2c, 49, SpringLayout.WEST, p);
 		btn1_p2c.setToolTipText("apagado");
@@ -196,14 +197,14 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.SOUTH, btn1_p2c, -530, SpringLayout.SOUTH, p);
 		btn1_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn1_p2c);
-		
+
 		btn2_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn2_p2c, 76, SpringLayout.WEST, p);
 		btn2_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn2_p2c, 82, SpringLayout.SOUTH, btn1_p2c);
 		btn2_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn2_p2c);
-		
+
 		btn3_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.EAST, btn2_p2c, -67, SpringLayout.WEST, btn3_p2c);
 		btn3_p2c.setToolTipText("apagado");
@@ -214,7 +215,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn3_p2c, 227, SpringLayout.WEST, p);
 		btn3_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn3_p2c);
-		
+
 		btn4_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn4_p2c, 324, SpringLayout.WEST, p);
 		sl_p.putConstraint(SpringLayout.EAST, btn4_p2c, -754, SpringLayout.EAST, p);
@@ -224,7 +225,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.SOUTH, btn4_p2c, 49, SpringLayout.NORTH, p);
 		btn4_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn4_p2c);
-		
+
 		btn5_p2c = new JButton("");
 		btn5_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn5_p2c, 79, SpringLayout.SOUTH, btn4_p2c);
@@ -233,7 +234,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn5_p2c, 142, SpringLayout.EAST, btn3_p2c);
 		btn5_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn5_p2c);
-		
+
 		btn6_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn6_p2c, 459, SpringLayout.WEST, p);
 		btn6_p2c.setToolTipText("apagado");
@@ -242,7 +243,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn6_p2c, 148, SpringLayout.EAST, btn4_p2c);
 		btn6_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn6_p2c);
-		
+
 		btn7_p2c = new JButton("");
 		btn7_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn7_p2c, 69, SpringLayout.SOUTH, btn6_p2c);
@@ -250,7 +251,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn7_p2c, 5, SpringLayout.EAST, btn6_p2c);
 		btn7_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn7_p2c);
-		
+
 		btn9_p2c = new JButton("");
 		btn9_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn9_p2c, 38, SpringLayout.NORTH, p);
@@ -259,7 +260,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn9_p2c, -388, SpringLayout.EAST, p);
 		btn9_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn9_p2c);
-		
+
 		btn8_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn8_p2c, 29, SpringLayout.NORTH, p);
 		btn8_p2c.setToolTipText("apagado");
@@ -267,7 +268,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn8_p2c, 54, SpringLayout.EAST, btn7_p2c);
 		btn8_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn8_p2c);
-		
+
 		btn10_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn10_p2c, 56, SpringLayout.EAST, btn9_p2c);
 		sl_p.putConstraint(SpringLayout.EAST, btn10_p2c, -287, SpringLayout.EAST, p);
@@ -276,7 +277,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.SOUTH, btn10_p2c, 0, SpringLayout.SOUTH, btn4_p2c);
 		btn10_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn10_p2c);
-		
+
 		btn11_p2c = new JButton("");
 		btn11_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn11_p2c, 134, SpringLayout.NORTH, p);
@@ -285,7 +286,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn11_p2c, 267, SpringLayout.EAST, btn7_p2c);
 		btn11_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn11_p2c);
-		
+
 		btn12_p2c = new JButton("");
 		btn12_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn12_p2c, 8, SpringLayout.NORTH, btn2_p2c);
@@ -294,7 +295,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn12_p2c, 124, SpringLayout.EAST, btn11_p2c);
 		btn12_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn12_p2c);
-		
+
 		btn13_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn13_p2c, 872, SpringLayout.WEST, p);
 		btn13_p2c.setToolTipText("apagado");
@@ -303,7 +304,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn13_p2c, 94, SpringLayout.EAST, btn10_p2c);
 		btn13_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn13_p2c);
-		
+
 		btn14_p2c = new JButton("");
 		btn14_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.WEST, btn14_p2c, -93, SpringLayout.EAST, p);
@@ -312,7 +313,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.NORTH, btn14_p2c, 0, SpringLayout.NORTH, btn4_p2c);
 		sl_p.putConstraint(SpringLayout.EAST, btn14_p2c, -36, SpringLayout.EAST, p);
 		p.add(btn14_p2c);
-		
+
 		btn15_p2c = new JButton("");
 		btn15_p2c.setToolTipText("apagado");
 		sl_p.putConstraint(SpringLayout.NORTH, btn15_p2c, 26, SpringLayout.SOUTH, btn14_p2c);
@@ -321,7 +322,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn15_p2c, -10, SpringLayout.EAST, p);
 		btn15_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn15_p2c);
-		
+
 		btn16_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn16_p2c, 7, SpringLayout.SOUTH, btn15_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn16_p2c, 117, SpringLayout.EAST, btn12_p2c);
@@ -330,7 +331,7 @@ public class planta2_alarmas extends JFrame {
 		btn16_p2c.setToolTipText("apagado");
 		btn16_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn16_p2c);
-		
+
 		btn17_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn17_p2c, 277, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn8_p2c, -219, SpringLayout.NORTH, btn17_p2c);
@@ -340,7 +341,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn17_p2c, -528, SpringLayout.EAST, p);
 		btn17_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn17_p2c);
-		
+
 		btn18_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn18_p2c, 119, SpringLayout.SOUTH, btn9_p2c);
 		btn18_p2c.setToolTipText("apagado");
@@ -348,7 +349,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.EAST, btn18_p2c, -405, SpringLayout.EAST, p);
 		btn18_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn18_p2c);
-		
+
 		btn19_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.SOUTH, btn18_p2c, -65, SpringLayout.NORTH, btn19_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn19_p2c, 277, SpringLayout.NORTH, p);
@@ -358,7 +359,7 @@ public class planta2_alarmas extends JFrame {
 		btn19_p2c.setToolTipText("apagado");
 		btn19_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn19_p2c);
-		
+
 		btn20_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn20_p2c, 384, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn20_p2c, 383, SpringLayout.WEST, p);
@@ -366,7 +367,7 @@ public class planta2_alarmas extends JFrame {
 		btn20_p2c.setToolTipText("apagado");
 		btn20_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn20_p2c);
-		
+
 		btn21_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn21_p2c, 383, SpringLayout.NORTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn21_p2c, 61, SpringLayout.EAST, btn20_p2c);
@@ -374,7 +375,7 @@ public class planta2_alarmas extends JFrame {
 		sl_p.putConstraint(SpringLayout.SOUTH, btn7_p2c, -226, SpringLayout.NORTH, btn21_p2c);
 		btn21_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn21_p2c);
-		
+
 		btn22_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.SOUTH, btn21_p2c, -11, SpringLayout.NORTH, btn22_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn22_p2c, 415, SpringLayout.NORTH, p);
@@ -384,7 +385,7 @@ public class planta2_alarmas extends JFrame {
 		btn22_p2c.setToolTipText("apagado");
 		btn22_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn22_p2c);
-		
+
 		btn23_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.NORTH, btn23_p2c, -119, SpringLayout.SOUTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn23_p2c, 626, SpringLayout.WEST, p);
@@ -394,7 +395,7 @@ public class planta2_alarmas extends JFrame {
 		btn23_p2c.setToolTipText("apagado");
 
 		p.add(btn23_p2c);
-		
+
 		btn24_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.EAST, btn22_p2c, -178, SpringLayout.WEST, btn24_p2c);
 		sl_p.putConstraint(SpringLayout.WEST, btn24_p2c, 711, SpringLayout.WEST, p);
@@ -404,7 +405,7 @@ public class planta2_alarmas extends JFrame {
 		btn24_p2c.setToolTipText("apagado");
 
 		p.add(btn24_p2c);
-		
+
 		btn25_p2c = new JButton("");
 		sl_p.putConstraint(SpringLayout.WEST, btn25_p2c, 810, SpringLayout.WEST, p);
 		sl_p.putConstraint(SpringLayout.EAST, btn25_p2c, -255, SpringLayout.EAST, p);
@@ -416,226 +417,11 @@ public class planta2_alarmas extends JFrame {
 
 		btn25_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn25_p2c);
-		
-		btn1_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn1_p2c);
-				
-				
-			}
-				
-				
-			
-		});
-		btn2_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn2_p2c);
-			}
-				
-				
-			
-		});
-		btn3_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn3_p2c);
-			}
-				
-				
-			
-		});
-	
-		btn4_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn4_p2c);
-			}
-				
-				
-			
-		});
-		
-		btn5_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn5_p2c);
-			}
-				
-				
-			
-		});
-		btn6_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn6_p2c);
-			}
-				
-				
-			
-		});
-		btn7_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn7_p2c);
-			}
-				
-				
-			
-		});
 
-		btn8_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn8_p2c);
-			}
-				
-				
-			
-		});
-
-		btn9_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn9_p2c);
-			}
-				
-				
-			
-		});
-
-		btn10_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn10_p2c);
-			}
-				
-				
-			
-		});
-
-		btn11_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn11_p2c);
-			}
-				
-				
-			
-		});
-
-		btn12_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn12_p2c);
-			}
-				
-				
-			
-		});
-		
-		btn13_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn13_p2c);
-			}
-				
-				
-			
-		});
-		btn14_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn14_p2c);
-			}
-				
-				
-			
-		});
-		btn15_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn15_p2c);
-			}
-				
-				
-			
-		});
-		btn16_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn16_p2c);
-			}
-				
-				
-			
-		});
-		btn17_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn17_p2c);
-			}
-				
-				
-			
-		});
-		btn18_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn18_p2c);
-			}
-				
-				
-			
-		});
-		btn19_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn19_p2c);
-			}
-				
-				
-			
-		});
-		btn20_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn20_p2c);
-			}
-				
-				
-			
-		});
-		btn21_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn21_p2c);
-			}
-				
-				
-			
-		});
-		btn22_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn22_p2c);
-			}
-				
-				
-			
-		});
-		btn23_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn23_p2c);
-			}
-				
-				
-			
-		});
-		btn24_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn24_p2c);
-			}
-				
-				
-			
-		});
-		btn25_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn25_p2c);
-			}
-				
-				
-			
-		});
-		
-		
-		
-		
-		
 		@SuppressWarnings("unused")
 		SpringLayout sl_contentPane = new SpringLayout();
-		
-		//a�adimos todos los botones al array
+
+		// a�adimos todos los botones al array
 		botones = new ArrayList<JButton>();
 		botones.add(btn1_p2c);
 		botones.add(btn2_p2c);
@@ -663,25 +449,30 @@ public class planta2_alarmas extends JFrame {
 		botones.add(btn24_p2c);
 		botones.add(btn25_p2c);
 
-		
 		for (JButton boton : botones) {
-		boton.setBorder(BorderFactory.createLineBorder(Color.black));
-		int temp = (Math.random() <= 0.5) ? 1 : 2;
-		if (temp==1) {
-			boton.setBackground(Color.RED);
-			boton.setToolTipText("apagado");
+			boton.setBorder(BorderFactory.createLineBorder(Color.black));
+			int temp = (Math.random() <= 0.5) ? 1 : 2;
+			boton.addActionListener(new ActionListener() {
 
-		}else {
-			boton.setBackground(Color.green);
-			boton.setToolTipText("encendido");
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					cambiar(boton);
+				}
+
+			});
+			if (temp == 1) {
+				boton.setBackground(Color.RED);
+				boton.setToolTipText("apagado");
+
+			} else {
+				boton.setBackground(Color.green);
+				boton.setToolTipText("encendido");
+
+			}
 
 		}
-	
-		
-		}
-	
-	
-		
+
 	}
 
 	
@@ -690,27 +481,16 @@ public class planta2_alarmas extends JFrame {
 	//log
 	
 	public void cambiar(JButton btn) {
-		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-		Date date = new Date(System.currentTimeMillis());
 		
-		try {
 			
 			if (btn.getToolTipText() == "encendido") {
 				
 				btn.setToolTipText("apagado");
 				btn.setBackground(Color.RED);
 				
-				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
-				output.write("[" + formatter.format(date) + "] Apagando calefaccion ");
-				output.newLine();
-				output.close();
 
-			}
+						
 			
-			
-		} catch (IOException e1) {
-			e1.printStackTrace();
-			System.out.println("error de escritura");
 		}
 	}
 }	

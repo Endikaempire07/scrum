@@ -148,6 +148,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	private JLabel lbl_21;
 	private JLabel lbl_16;
 	private JButton btnApagar;
+	private JMenuBar menuBar_1;
 	
 	
 	/**
@@ -179,19 +180,19 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		menuBar = new JMenuBar();
-		menuBar.setForeground(Color.WHITE);
-		menuBar.setBackground(Color.GRAY);
-		setJMenuBar(menuBar);
+		menuBar_1 = new JMenuBar();
+		menuBar_1.setForeground(Color.WHITE);
+		menuBar_1.setBackground(Color.GRAY);
+		setJMenuBar(menuBar_1);
 
 		Planta0 = new JMenu("Planta baja");
-		menuBar.add(Planta0);
+		menuBar_1.add(Planta0);
 
 		Planta1 = new JMenu("Planta 1");
-		menuBar.add(Planta1);
+		menuBar_1.add(Planta1);
 		
 		Planta2 = new JMenu("Planta 2");
-		menuBar.add(Planta2);
+		menuBar_1.add(Planta2);
 		
 		
 		
@@ -220,6 +221,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		Planta1.add(Calefaccion1);
 
 		Calefaccion2 = new JMenuItem("Calefacci�n");
+		menuBar_1.add(Calefaccion2);
 		Calefaccion2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
@@ -228,7 +230,6 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
             	dispose();
             }
 		});
-		Planta2.add(Calefaccion2);
 		
 	
 		contentPane = new JPanel();

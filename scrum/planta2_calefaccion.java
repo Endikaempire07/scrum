@@ -164,7 +164,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	 */
 	public planta2_calefaccion() {
 		setResizable(false);
-		setTitle("Planta 2 Calefacción");
+		setTitle("Planta 2 Calefacciï¿½n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 		
@@ -199,9 +199,27 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		
 		Calefaccion = new JMenuItem("Planta baja");
 		menuBar.add(Calefaccion);
-		Calefaccion.setBackground(Color.black);
-		Calefaccion.setForeground(Color.white);
-		Calefaccion.setBorder(BorderFactory.createLineBorder(Color.white));
+		Calefaccion.setBackground(Color.LIGHT_GRAY);
+		Calefaccion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				Calefaccion.setBackground(Color.black);
+				Calefaccion.setForeground(Color.white);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				Calefaccion.setBackground(Color.lightGray);
+				Calefaccion.setForeground(Color.black);
+			}
+		});
+		Calefaccion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				// Close actual frame and open another one
+				planta_baja_calefaccion Planta0 = new planta_baja_calefaccion();
+				Planta0.setVisible(true);
+				dispose();
+			}
+		});
 		
 		Calefaccion1 = new JMenuItem("Primera planta");
 		menuBar.add(Calefaccion1);
@@ -229,27 +247,9 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 
 		Calefaccion2 = new JMenuItem("Segunda planta");
 		menuBar.add(Calefaccion2);
-		Calefaccion2.setBackground(Color.LIGHT_GRAY);
-		Calefaccion2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				Calefaccion2.setBackground(Color.black);
-				Calefaccion2.setForeground(Color.white);
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				Calefaccion2.setBackground(Color.lightGray);
-				Calefaccion2.setForeground(Color.black);
-			}
-		});
-		Calefaccion2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-				// Close actual frame and open another one
-				planta2_calefaccion Planta2 = new planta2_calefaccion();
-				Planta2.setVisible(true);
-				dispose();
-			}
-		});
+		Calefaccion2.setBackground(Color.black);
+		Calefaccion2.setForeground(Color.white);
+		Calefaccion2.setBorder(BorderFactory.createLineBorder(Color.white));
 	
 		
 	
