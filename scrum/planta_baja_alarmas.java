@@ -364,7 +364,12 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 		
 		for (JButton boton : botones) {
 			boton.setBorder(BorderFactory.createLineBorder(Color.black));
-			
+			int temp = (Math.random() <= 0.5) ? 1 : 2;
+			if (temp==1) {
+				boton.setBackground(Color.RED);
+			}else {
+				boton.setBackground(Color.green);
+			}
 		}
 
 		SpringLayout sl_contentPane = new SpringLayout();
