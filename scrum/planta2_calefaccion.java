@@ -270,7 +270,6 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.setLayout(sl_p);
 		
 		btnCalefaccionA = new JButton("Apagar Todo");
-		sl_p.putConstraint(SpringLayout.SOUTH, btnCalefaccionA, -66, SpringLayout.SOUTH, p);
 		btnCalefaccionA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -308,7 +307,6 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(lblestado);
 		
 		btn1_p2c = new JButton("");
-		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 0, SpringLayout.WEST, btn1_p2c);
 		btn1_p2c.setToolTipText("apagado");
 		
 		sl_p.putConstraint(SpringLayout.EAST, lblestado, 62, SpringLayout.EAST, btn1_p2c);
@@ -637,6 +635,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(btn22_p2c);
 		
 		btn23_p2c = new JButton("");
+		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionA, 0, SpringLayout.NORTH, btn23_p2c);
 		sl_p.putConstraint(SpringLayout.NORTH, btn23_p2c, -119, SpringLayout.SOUTH, p);
 		sl_p.putConstraint(SpringLayout.WEST, btn23_p2c, 28, SpringLayout.EAST, lbl23);
 		sl_p.putConstraint(SpringLayout.SOUTH, btn23_p2c, -98, SpringLayout.SOUTH, p);
@@ -763,6 +762,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(E8);
 		
 		E9 = new JLabel("Apagado");
+		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionA, 0, SpringLayout.WEST, E9);
 		sl_p.putConstraint(SpringLayout.NORTH, E9, 0, SpringLayout.NORTH, estado1);
 		E9.setForeground(Color.RED);
 		p.add(E9);
@@ -962,8 +962,8 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		p.add(estado9);
 		
 		btnCalefaccionE = new JButton("Encender Todo");
-		sl_p.putConstraint(SpringLayout.NORTH, btnCalefaccionE, 0, SpringLayout.NORTH, btnCalefaccionA);
-		sl_p.putConstraint(SpringLayout.WEST, btnCalefaccionE, 0, SpringLayout.WEST, lbl3);
+		sl_p.putConstraint(SpringLayout.SOUTH, btnCalefaccionE, 0, SpringLayout.SOUTH, btn23_p2c);
+		sl_p.putConstraint(SpringLayout.EAST, btnCalefaccionE, 0, SpringLayout.EAST, estado10);
 		btnCalefaccionE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				encender(btn1_p2c, E1,lbl1);

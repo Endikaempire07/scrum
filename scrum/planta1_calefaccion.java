@@ -262,10 +262,11 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		SpringLayout sl_pa = new SpringLayout();
 		pa.setLayout(sl_pa);
 
-		btnEncender = new JButton("Encender");
+		btnEncender = new JButton("Encender todo");
 		pa.add(btnEncender);
 
 		JLabel lblestado = new JLabel("Estado");
+		sl_pa.putConstraint(SpringLayout.WEST, btnEncender, 0, SpringLayout.WEST, lblestado);
 		sl_pa.putConstraint(SpringLayout.WEST, lblestado, 10, SpringLayout.WEST, pa);
 		lblestado.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		pa.add(lblestado);
@@ -615,7 +616,6 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		pa.add(lbl_8);
 
 		lbl_14 = new JLabel("Apagado");
-		sl_pa.putConstraint(SpringLayout.EAST, btnEncender, 0, SpringLayout.EAST, lbl_14);
 		lbl_14.setForeground(Color.RED);
 		pa.add(lbl_14);
 
@@ -646,6 +646,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 
 		lblestado_10 = new JLabel("10");
 		sl_pa.putConstraint(SpringLayout.WEST, lbl_10, 27, SpringLayout.WEST, lblestado_10);
+		sl_pa.putConstraint(SpringLayout.EAST, lbl_10, 74, SpringLayout.WEST, lblestado_10);
 		sl_pa.putConstraint(SpringLayout.NORTH, lblestado_10, 15, SpringLayout.NORTH, lblestado_9);
 		sl_pa.putConstraint(SpringLayout.EAST, lblestado_10, 0, SpringLayout.EAST, lblestado_9);
 		sl_pa.putConstraint(SpringLayout.NORTH, lbl_10, 0, SpringLayout.NORTH, lblestado_10);
@@ -804,7 +805,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 
 		lbl_21 = new JLabel("Apagado");
 		sl_pa.putConstraint(SpringLayout.NORTH, lbl_21, 0, SpringLayout.NORTH, lblestado_21);
-		sl_pa.putConstraint(SpringLayout.WEST, lbl_21, 25, SpringLayout.WEST, lblestado_21);
+		sl_pa.putConstraint(SpringLayout.WEST, lbl_21, 235, SpringLayout.WEST, pa);
 		sl_pa.putConstraint(SpringLayout.EAST, lblestado_21, -6, SpringLayout.WEST, lbl_21);
 		lbl_21.setForeground(Color.RED);
 		pa.add(lbl_21);
@@ -815,10 +816,10 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		lbl_16.setForeground(Color.RED);
 		pa.add(lbl_16);
 
-		btnApagar = new JButton("Apagar");
-		sl_pa.putConstraint(SpringLayout.NORTH, btnApagar, 40, SpringLayout.SOUTH, lbl_10);
+		btnApagar = new JButton("Apagar todo");
 		sl_pa.putConstraint(SpringLayout.NORTH, btnEncender, 0, SpringLayout.NORTH, btnApagar);
-		sl_pa.putConstraint(SpringLayout.WEST, btnApagar, 0, SpringLayout.WEST, lblestado);
+		sl_pa.putConstraint(SpringLayout.NORTH, btnApagar, 44, SpringLayout.SOUTH, lbl_20);
+		sl_pa.putConstraint(SpringLayout.WEST, btnApagar, 120, SpringLayout.WEST, pa);
 		pa.add(btnApagar);
 
 		SpringLayout sl_contentPane = new SpringLayout();
