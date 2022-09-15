@@ -23,7 +23,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Date;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
