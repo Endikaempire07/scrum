@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import scrum.Boton.boton;
 
 import java.awt.Color;
 
@@ -65,34 +64,8 @@ public class planta2_alarmas extends JFrame {
 	private JButton btn20_p2c;
 	private JMenuBar menuBar;
 	private ArrayList<JButton> botones;
-	private ArrayList<boton> color;
 
-	
-	private String nombre1;
-	private String nombre2;
-	private String nombre3;
-	private String nombre4;
-	private String nombre5;
-	private String nombre6;
-	private String nombre7;
-	private String nombre8;
-	private String nombre9;
-	private String nombre10;
-	private String nombre11;
-	private String nombre12;
-	private String nombre13;
-	private String nombre14;
-	private String nombre15;
-	private String nombre16;
-	private String nombre17;
-	private String nombre18;
-	private String nombre19;
-	private String nombre20;
-	private String nombre21;
-	private String nombre22;
-	private String nombre23;
-	private String nombre24;
-	private String nombre25;
+
 
 
 
