@@ -6,9 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import scrum.Boton.boton;
+
 import java.awt.Color;
 
-import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 
@@ -19,17 +20,15 @@ import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JMenu;
 import javax.swing.SpringLayout;
-import java.awt.Font;
 
 public class planta2_alarmas extends JFrame {
 
@@ -65,8 +64,37 @@ public class planta2_alarmas extends JFrame {
 	private JButton btn25_p2c;
 	private JButton btn20_p2c;
 	private JMenuBar menuBar;
-	File logFile = new File("log_Planta2.txt");
 	private ArrayList<JButton> botones;
+	private ArrayList<boton> color;
+
+	
+	private String nombre1;
+	private String nombre2;
+	private String nombre3;
+	private String nombre4;
+	private String nombre5;
+	private String nombre6;
+	private String nombre7;
+	private String nombre8;
+	private String nombre9;
+	private String nombre10;
+	private String nombre11;
+	private String nombre12;
+	private String nombre13;
+	private String nombre14;
+	private String nombre15;
+	private String nombre16;
+	private String nombre17;
+	private String nombre18;
+	private String nombre19;
+	private String nombre20;
+	private String nombre21;
+	private String nombre22;
+	private String nombre23;
+	private String nombre24;
+	private String nombre25;
+
+
 
 	/**
 	 * Launch the application.
@@ -115,6 +143,7 @@ public class planta2_alarmas extends JFrame {
 		Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				escribir();
 				menu_inicio menu = new menu_inicio();
 				menu.setVisible(true);
 				dispose();
@@ -144,6 +173,8 @@ public class planta2_alarmas extends JFrame {
 		});
 		Alarmas1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				escribir();
+
 				// Close actual frame and open another one
 				planta1_alarmas Planta1 = new planta1_alarmas();
 				Planta1.setVisible(true);
@@ -168,6 +199,8 @@ public class planta2_alarmas extends JFrame {
 		});
 		Alarmas2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				escribir();
+
 				// Close actual frame and open another one
 				planta2_alarmas Planta2 = new planta2_alarmas();
 				Planta2.setVisible(true);
@@ -417,220 +450,7 @@ public class planta2_alarmas extends JFrame {
 		btn25_p2c.setIcon(new ImageIcon(planta2_alarmas.class.getResource("/imagenes/sensor.png")));
 		p.add(btn25_p2c);
 		
-		btn1_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn1_p2c);
-				
-				
-			}
-				
-				
-			
-		});
-		btn2_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn2_p2c);
-			}
-				
-				
-			
-		});
-		btn3_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn3_p2c);
-			}
-				
-				
-			
-		});
 	
-		btn4_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn4_p2c);
-			}
-				
-				
-			
-		});
-		
-		btn5_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn5_p2c);
-			}
-				
-				
-			
-		});
-		btn6_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn6_p2c);
-			}
-				
-				
-			
-		});
-		btn7_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn7_p2c);
-			}
-				
-				
-			
-		});
-
-		btn8_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn8_p2c);
-			}
-				
-				
-			
-		});
-
-		btn9_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn9_p2c);
-			}
-				
-				
-			
-		});
-
-		btn10_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn10_p2c);
-			}
-				
-				
-			
-		});
-
-		btn11_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn11_p2c);
-			}
-				
-				
-			
-		});
-
-		btn12_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn12_p2c);
-			}
-				
-				
-			
-		});
-		
-		btn13_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn13_p2c);
-			}
-				
-				
-			
-		});
-		btn14_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn14_p2c);
-			}
-				
-				
-			
-		});
-		btn15_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn15_p2c);
-			}
-				
-				
-			
-		});
-		btn16_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn16_p2c);
-			}
-				
-				
-			
-		});
-		btn17_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn17_p2c);
-			}
-				
-				
-			
-		});
-		btn18_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn18_p2c);
-			}
-				
-				
-			
-		});
-		btn19_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn19_p2c);
-			}
-				
-				
-			
-		});
-		btn20_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn20_p2c);
-			}
-				
-				
-			
-		});
-		btn21_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn21_p2c);
-			}
-				
-				
-			
-		});
-		btn22_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn22_p2c);
-			}
-				
-				
-			
-		});
-		btn23_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn23_p2c);
-			}
-				
-				
-			
-		});
-		btn24_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn24_p2c);
-			}
-				
-				
-			
-		});
-		btn25_p2c.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				cambiar(btn25_p2c);
-			}
-				
-				
-			
-		});
-		
-		
-		
-		
 		
 		@SuppressWarnings("unused")
 		SpringLayout sl_contentPane = new SpringLayout();
@@ -664,6 +484,15 @@ public class planta2_alarmas extends JFrame {
 		botones.add(btn25_p2c);
 
 		
+		
+		
+		
+		
+		
+		
+		
+		
+	
 		for (JButton boton : botones) {
 		boton.setBorder(BorderFactory.createLineBorder(Color.black));
 		int temp = (Math.random() <= 0.5) ? 1 : 2;
@@ -679,38 +508,93 @@ public class planta2_alarmas extends JFrame {
 	
 		
 		}
-	
+
+		for (JButton boton : botones) {
+			boton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {System.out.println(1);
+					if (boton.getToolTipText().equals("encendido")) {
+						boton.setToolTipText("apagado");
+						boton.setBackground(Color.RED);
+						escribir();
+					}
+					else {
+						
+						boton.setToolTipText("encendido");
+						boton.setBackground(Color.GREEN);
+						escribir();
+					}
+				}
+            });
+		}
+		leer();
+		escribir();
 	
 		
 	}
 
 	
-	
-	
-	//log
-	
-	public void cambiar(JButton btn) {
-		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-		Date date = new Date(System.currentTimeMillis());
-		
-		try {
-			
-			if (btn.getToolTipText() == "encendido") {
-				
-				btn.setToolTipText("apagado");
-				btn.setBackground(Color.RED);
-				
-				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
-				output.write("[" + formatter.format(date) + "] Apagando calefaccion ");
-				output.newLine();
-				output.close();
 
+	
+	public void escribir() {	
+		FileOutputStream  fos;
+		ObjectOutputStream oos;
+		try {
+			fos = new FileOutputStream("planta2_alarma.dat");
+			oos = new ObjectOutputStream(fos);
+			for (JButton jButton : botones) {
+				oos.writeObject(jButton);
 			}
+
+			oos.close();
+			fos.close();
 			
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
 			
-		} catch (IOException e1) {
-			e1.printStackTrace();
-			System.out.println("error de escritura");
+		}catch(IOException e){
+			e.printStackTrace();
+			
 		}
 	}
+	
+	@SuppressWarnings("unchecked")
+	public void leer() {
+
+		FileInputStream  fis ;
+		ObjectInputStream ois;
+		ArrayList<JButton> temporal = new ArrayList<JButton>();
+		int num = 0;
+		
+		try {
+
+			fis = new FileInputStream("planta2_alarma.dat");
+			ois = new ObjectInputStream(fis);
+			while (fis.available() > 0) {
+				temporal.add((JButton) ois.readObject());
+            }
+			
+			for (JButton jButton : temporal) {
+				botones.get(num).setBackground(jButton.getBackground());
+				botones.get(num).setToolTipText(jButton.getToolTipText());
+				num++;
+			}
+			
+			ois.close();
+			fis.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+	
 }	
