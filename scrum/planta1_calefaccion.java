@@ -194,9 +194,8 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 				Menu.setBackground(Color.black);
 				Menu.setForeground(Color.white);
 			}
-
 			@Override
-			public void mouseExited(MouseEvent me) {
+			public void mouseExited(MouseEvent me){
 				Menu.setBackground(Color.LIGHT_GRAY);
 				Menu.setForeground(Color.black);
 			}
