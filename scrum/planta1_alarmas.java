@@ -382,7 +382,6 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		for (JButton boton : botones) {
 			boton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					System.out.println(1);
 					if (boton.getToolTipText().equals("encendido")) {
 						boton.setToolTipText("apagado");
 						boton.setBackground(Color.RED);

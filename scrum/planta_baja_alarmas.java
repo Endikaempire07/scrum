@@ -17,6 +17,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.SpringLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class planta_baja_alarmas extends JFrame implements ActionListener {
@@ -372,7 +378,6 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
 					cambiar(boton);
 				}
 				
@@ -388,12 +393,77 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 			}
 		}
 		SpringLayout sl_contentPane = new SpringLayout();
+
+		leer();
+		escribir();
 	}
 	
 	public void cambiar(JButton btn) {
-		if (btn.getToolTipText() == "encendido") {
+		if (btn.getToolTipText().equals("encendido")) {
 			btn.setToolTipText("apagado");
 			btn.setBackground(Color.RED);
+			escribir();
+		} else {
+			btn.setToolTipText("encendido");
+			btn.setBackground(Color.GREEN);
+			escribir();
+		}
+	}
+	
+	public void escribir() {	
+		FileOutputStream  fos;
+		ObjectOutputStream oos;
+		try {
+			fos = new FileOutputStream("planta0_alarmas.dat");
+			oos = new ObjectOutputStream(fos);
+			for (JButton jButton : botones) {
+				oos.writeObject(jButton);
+			}
+
+			oos.close();
+			fos.close();
+			
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+			
+		}catch(IOException e){
+			e.printStackTrace();
+			
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void leer() {
+
+		FileInputStream  fis ;
+		ObjectInputStream ois;
+		ArrayList<JButton> temporal = new ArrayList<JButton>();
+		int num = 0;
+		
+		try {
+
+			fis = new FileInputStream("planta0_alarmas.dat");
+			ois = new ObjectInputStream(fis);
+			while (fis.available() > 0) {
+				temporal.add((JButton) ois.readObject());
+            }
+			
+			for (JButton jButton : temporal) {
+				botones.get(num).setBackground(jButton.getBackground());
+				botones.get(num).setToolTipText(jButton.getToolTipText());
+				num++;
+			}
+			
+			ois.close();
+			fis.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

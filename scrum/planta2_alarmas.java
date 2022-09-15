@@ -1,6 +1,7 @@
 package scrum;
 
 import java.awt.EventQueue;
+import java.awt.Point;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -116,19 +117,42 @@ public class planta2_alarmas extends JFrame {
 		Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
-				escribir();
+				Point pos = posicion();
 				menu_inicio menu = new menu_inicio();
 				menu.setVisible(true);
+				menu.setLocation(pos);
 				dispose();
 			}
 		});
-		
+
 		Alarmas = new JMenuItem("Planta baja");
 		menuBar.add(Alarmas);
-		Alarmas.setBackground(Color.black);
-		Alarmas.setForeground(Color.white);
-		Alarmas.setBorder(BorderFactory.createLineBorder(Color.white));
-		
+		Alarmas.setBackground(Color.LIGHT_GRAY);
+		Alarmas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent me) {
+				Alarmas.setBackground(Color.black);
+				Alarmas.setForeground(Color.white);
+			}
+			@Override
+			public void mouseExited(MouseEvent me) {
+				Alarmas.setBackground(Color.lightGray);
+				Alarmas.setForeground(Color.black);
+			}
+		});
+		Alarmas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				// Close actual frame and open another one
+				Point pos = posicion();
+				planta_baja_alarmas Planta0 = new planta_baja_alarmas();
+				Planta0.setVisible(true);
+				Planta0.setLocation(pos);
+				dispose();
+			}
+		});
+
+	
+
 		Alarmas1 = new JMenuItem("Primera planta");
 		menuBar.add(Alarmas1);
 		Alarmas1.setBackground(Color.LIGHT_GRAY);
@@ -146,41 +170,21 @@ public class planta2_alarmas extends JFrame {
 		});
 		Alarmas1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				escribir();
-
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta1_alarmas Planta1 = new planta1_alarmas();
 				Planta1.setVisible(true);
+				Planta1.setLocation(pos);
 				dispose();
 			}
 		});
 
 		Alarmas2 = new JMenuItem("Segunda planta");
 		menuBar.add(Alarmas2);
-		Alarmas2.setBackground(Color.LIGHT_GRAY);
-		Alarmas2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				Alarmas2.setBackground(Color.black);
-				Alarmas2.setForeground(Color.white);
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				Alarmas2.setBackground(Color.lightGray);
-				Alarmas2.setForeground(Color.black);
-			}
-		});
-		Alarmas2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent ae) {
-				escribir();
-
-				// Close actual frame and open another one
-				planta2_alarmas Planta2 = new planta2_alarmas();
-				Planta2.setVisible(true);
-				dispose();
-			}
-		});
-	
+		Alarmas2.setBackground(Color.black);
+		Alarmas2.setForeground(Color.white);
+		Alarmas2.setBorder(BorderFactory.createLineBorder(Color.white));
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
@@ -528,6 +532,10 @@ public class planta2_alarmas extends JFrame {
 			e.printStackTrace();
 			
 		}
+	}
+	public Point posicion() {
+		Point frame = this.rootPane.getLocation();
+		return frame;
 	}
 	
 	@SuppressWarnings("unchecked")

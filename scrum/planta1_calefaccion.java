@@ -175,7 +175,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	 * Create the frame.
 	 */
 	public planta1_calefaccion() {
-		setTitle("Planta 1 CalefacciÃ³n");
+		setTitle("Planta 1 Calefacción");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 		setResizable(false);
