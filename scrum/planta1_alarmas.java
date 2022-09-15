@@ -19,6 +19,12 @@ import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
@@ -336,12 +342,21 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 			
 		}
 		
+		
+		
 		for (JButton boton : botones) {
 			boton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if (boton.getToolTipText() == "encendido") {
+				public void actionPerformed(ActionEvent e) {System.out.println(1);
+					if (boton.getToolTipText().equals("encendido")) {
 						boton.setToolTipText("apagado");
 						boton.setBackground(Color.RED);
+						escribir();
+					}
+					else {
+						
+						boton.setToolTipText("encendido");
+						boton.setBackground(Color.GREEN);
+						escribir();
 					}
 				}
             });
@@ -351,15 +366,73 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		SpringLayout sl_contentPane = new SpringLayout();
 		
 		
-
-	
-	
-		
+		leer();
+		escribir();
 	}
+	
+	public void escribir() {	
+		FileOutputStream  fos;
+		ObjectOutputStream oos;
+		try {
+			fos = new FileOutputStream("boton.dat");
+			oos = new ObjectOutputStream(fos);
+			for (JButton jButton : botones) {
+				oos.writeObject(jButton);
+			}
+
+			oos.close();
+			fos.close();
+			
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+			
+		}catch(IOException e){
+			e.printStackTrace();
+			
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void leer() {
+
+		FileInputStream  fis ;
+		ObjectInputStream ois;
+		ArrayList<JButton> temporal = new ArrayList<JButton>();
+		int num = 0;
+		
+		try {
+
+			fis = new FileInputStream("boton.dat");
+			ois = new ObjectInputStream(fis);
+			while (fis.available() > 0) {
+				temporal.add((JButton) ois.readObject());
+            }
+			
+			for (JButton jButton : temporal) {
+				botones.get(num).setBackground(jButton.getBackground());
+				botones.get(num).setToolTipText(jButton.getToolTipText());
+				num++;
+			}
+			
+			ois.close();
+			fis.close();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+	
 }
