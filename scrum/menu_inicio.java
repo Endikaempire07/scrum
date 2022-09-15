@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class menu_inicio extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private static Point posicion;
 
 	/**
 	 * Launch the application.
@@ -34,6 +36,7 @@ public class menu_inicio extends JFrame {
 				try {
 					menu_inicio frame = new menu_inicio();
 					frame.setVisible(true);
+					posicion = frame.getLocationOnScreen();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -62,8 +65,10 @@ public class menu_inicio extends JFrame {
 		
 		JLabel lblSeleccion = new JLabel("Selección de planos");
 		JLabel lblCalefaccion = new JLabel("Calefacciónes");
-;
+
 		JLabel lblAlarmas = new JLabel("Alarmas de incendios");
+		
+		
 		
 		JButton btnCalefaccion = new JButton("Visualizar");
 		btnCalefaccion.setFont(new Font("Ravie", Font.PLAIN, 15));
@@ -81,8 +86,8 @@ public class menu_inicio extends JFrame {
             	//Close actual frame and open another one
             	planta_baja_calefaccion menuCalefaccion = new planta_baja_calefaccion();
             	menuCalefaccion.setVisible(true);
-            	menuCalefaccion.setLocationRelativeTo(rootPane);
             	dispose();
+            	System.out.print(posicion);
             }
 		});
 		
@@ -100,13 +105,16 @@ public class menu_inicio extends JFrame {
 		btnAlarmas.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
+				Point pos = posicion();
+				System.out.println(pos);
             	planta_baja_alarmas menuAlarma = new planta_baja_alarmas();
             	menuAlarma.setVisible(true);
-            	menuAlarma.setLocationRelativeTo(rootPane);
+            	menuAlarma.setLocation(pos);
             	dispose();
             }
 		});
 		
+		getLocation();
 		
 		FlowLayout flowLayout = (FlowLayout) panelSeleccion.getLayout();
 		flowLayout.setVgap(50);
@@ -137,6 +145,11 @@ public class menu_inicio extends JFrame {
 		panelAlarmas.add(lblAlarmas);
 		
 		panelAlarmas.add(btnAlarmas);
+	}
+	
+	public Point posicion() {
+		Point frame = this.rootPane.getLocationOnScreen();
+		return frame;	
 	}
 
 }

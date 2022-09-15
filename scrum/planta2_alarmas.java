@@ -30,6 +30,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
 import javax.swing.SpringLayout;
 import java.awt.Font;
+import java.awt.Point;
 
 public class planta2_alarmas extends JFrame {
 
@@ -475,7 +476,12 @@ public class planta2_alarmas extends JFrame {
 
 	}
 
+
 	
+	public Point posicion() {
+		Point frame = this.rootPane.getLocationOnScreen();
+		return frame;	
+	}
 	
 	
 	//log
