@@ -85,7 +85,6 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 				try {
 					planta1_alarmas frame = new planta1_alarmas();
 					frame.setVisible(true);
-					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -100,6 +99,7 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		setTitle("Planta 1 alarmas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
+		setResizable(false);
 
 		menuBar = new JMenuBar();
 		menuBar.setForeground(Color.WHITE);

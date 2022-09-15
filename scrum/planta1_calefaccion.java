@@ -164,7 +164,6 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 				try {
 					planta1_calefaccion frame = new planta1_calefaccion();
 					frame.setVisible(true);
-					frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -179,6 +178,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 		setTitle("Planta 1 Calefacción");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
+		setResizable(false);
 
 		menuBar = new JMenuBar();
 		menuBar.setForeground(Color.WHITE);
