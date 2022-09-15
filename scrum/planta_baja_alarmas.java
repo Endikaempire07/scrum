@@ -1,6 +1,7 @@
 package scrum;
 
 import java.awt.EventQueue;
+import java.awt.Point;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -98,8 +99,10 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 		Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				menu_inicio menu = new menu_inicio();
 				menu.setVisible(true);
+				menu.setLocation(pos);
 				dispose();
 			}
 		});
@@ -128,8 +131,10 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 		Alarmas1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta1_alarmas Planta1 = new planta1_alarmas();
 				Planta1.setVisible(true);
+				Planta1.setLocation(pos);
 				dispose();
 			}
 		});
@@ -152,8 +157,10 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 		Alarmas2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta2_alarmas Planta2 = new planta2_alarmas();
 				Planta2.setVisible(true);
+				Planta2.setLocation(pos);
 				dispose();
 			}
 		});
@@ -370,6 +377,7 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 				}
 				
 			});
+			
 			int temp = (Math.random() <= 0.5) ? 1 : 2;
 			if (temp==1) {
 				boton.setBackground(Color.RED);
@@ -379,9 +387,7 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 				boton.setToolTipText("encendido");
 			}
 		}
-
 		SpringLayout sl_contentPane = new SpringLayout();
-
 	}
 	
 	public void cambiar(JButton btn) {
@@ -391,6 +397,10 @@ public class planta_baja_alarmas extends JFrame implements ActionListener {
 		}
 	}
 
+	public Point posicion() {
+		Point frame = this.rootPane.getLocationOnScreen();
+		return frame;
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

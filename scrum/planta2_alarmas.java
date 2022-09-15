@@ -117,8 +117,10 @@ public class planta2_alarmas extends JFrame {
 		Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				menu_inicio menu = new menu_inicio();
 				menu.setVisible(true);
+            	menu.setLocation(pos);
 				dispose();
 			}
 		});
@@ -142,8 +144,10 @@ public class planta2_alarmas extends JFrame {
 		Alarmas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta_baja_alarmas Planta0 = new planta_baja_alarmas();
 				Planta0.setVisible(true);
+            	Planta0.setLocation(pos);
 				dispose();
 			}
 		});
@@ -167,8 +171,10 @@ public class planta2_alarmas extends JFrame {
 		Alarmas1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta1_alarmas Planta1 = new planta1_alarmas();
 				Planta1.setVisible(true);
+            	Planta1.setLocation(pos);
 				dispose();
 			}
 		});
@@ -454,49 +460,33 @@ public class planta2_alarmas extends JFrame {
 			boton.setBorder(BorderFactory.createLineBorder(Color.black));
 			int temp = (Math.random() <= 0.5) ? 1 : 2;
 			boton.addActionListener(new ActionListener() {
-
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
 					cambiar(boton);
 				}
-
 			});
+			
 			if (temp == 1) {
 				boton.setBackground(Color.RED);
 				boton.setToolTipText("apagado");
-
 			} else {
 				boton.setBackground(Color.green);
 				boton.setToolTipText("encendido");
-
 			}
-
 		}
-
 	}
-
-
 	
 	public Point posicion() {
 		Point frame = this.rootPane.getLocationOnScreen();
 		return frame;	
 	}
-	
-	
-	//log
-	
-	public void cambiar(JButton btn) {
 		
-			
-			if (btn.getToolTipText() == "encendido") {
-				
-				btn.setToolTipText("apagado");
-				btn.setBackground(Color.RED);
-				
-
-						
-			
+	// log
+	public void cambiar(JButton btn) {
+		if (btn.getToolTipText() == "encendido") {
+			btn.setToolTipText("apagado");
+			btn.setBackground(Color.RED);
 		}
 	}
 }	

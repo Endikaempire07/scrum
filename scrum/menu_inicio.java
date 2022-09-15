@@ -84,10 +84,11 @@ public class menu_inicio extends JFrame {
 		btnCalefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
+				Point pos = posicion();
             	planta_baja_calefaccion menuCalefaccion = new planta_baja_calefaccion();
             	menuCalefaccion.setVisible(true);
+            	menuCalefaccion.setLocation(pos);
             	dispose();
-            	System.out.print(posicion);
             }
 		});
 		
@@ -106,7 +107,6 @@ public class menu_inicio extends JFrame {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
 				Point pos = posicion();
-				System.out.println(pos);
             	planta_baja_alarmas menuAlarma = new planta_baja_alarmas();
             	menuAlarma.setVisible(true);
             	menuAlarma.setLocation(pos);

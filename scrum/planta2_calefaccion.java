@@ -29,6 +29,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenu;
 import javax.swing.SpringLayout;
 import java.awt.Font;
+import java.awt.Point;
 
 public class planta2_calefaccion extends JFrame implements ActionListener{
 
@@ -191,8 +192,10 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				menu_inicio menu = new menu_inicio();
 				menu.setVisible(true);
+				menu.setLocation(pos);
 				dispose();
 			}
 		});
@@ -215,8 +218,10 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		Calefaccion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta_baja_calefaccion Planta0 = new planta_baja_calefaccion();
 				Planta0.setVisible(true);
+				Planta0.setLocation(pos);
 				dispose();
 			}
 		});
@@ -239,8 +244,10 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		Calefaccion1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta1_calefaccion Planta1 = new planta1_calefaccion();
 				Planta1.setVisible(true);
+				Planta1.setLocation(pos);
 				dispose();
 			}
 		});
@@ -990,30 +997,26 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		});
 		p.add(btnCalefaccionE);
 		
+		
+		
 		btn1_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn1_p2c, E1,lbl1);
-				
-				
 			}
-				
-				
 			
 		});
+		
 		btn2_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn2_p2c, E2,lbl2);
 			}
-				
-				
 			
 		});
+		
 		btn3_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn3_p2c, E3,lbl3);
 			}
-				
-				
 			
 		});
 	
@@ -1021,198 +1024,159 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn4_p2c, E4,lbl4);
 			}
-				
-				
-			
+
 		});
 		
 		btn5_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn5_p2c, E5,lbl5);
 			}
-				
-				
-			
+
 		});
+		
 		btn6_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn6_p2c, E6,lbl6);
 			}
-				
-				
-			
+
 		});
+		
 		btn7_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn7_p2c, E7,lbl7);
 			}
-				
-				
-			
+
 		});
 
 		btn8_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn8_p2c, E8,lbl8);
 			}
-				
-				
-			
+
 		});
 
 		btn9_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn9_p2c, E9,lbl9);
 			}
-				
-				
-			
+
 		});
 
 		btn10_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn10_p2c, E10,lbl10);
 			}
-				
-				
-			
+
 		});
 
 		btn11_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn11_p2c, E11,lbl11);
 			}
-				
-				
-			
+
 		});
 
 		btn12_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn12_p2c, E12,lbl12);
 			}
-				
-				
-			
+
 		});
 		
 		btn13_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn13_p2c, E13,lbl13);
 			}
-				
-				
-			
+
 		});
+		
 		btn14_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn14_p2c, E14,lbl14);
 			}
-				
-				
-			
+
 		});
+		
 		btn15_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn15_p2c, E15,lbl15);
 			}
-				
-				
-			
+
 		});
+		
 		btn16_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn16_p2c, E16,lbl16);
 			}
-				
-				
-			
+
 		});
+		
 		btn17_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn17_p2c, E17,lbl17);
 			}
-				
-				
-			
+
 		});
+		
 		btn18_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn18_p2c, E18,lbl18);
 			}
-				
-				
-			
+
 		});
+		
 		btn19_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn19_p2c, E19,lbl19);
 			}
-				
-				
 			
 		});
+		
 		btn20_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn20_p2c, E20,lbl20);
 			}
-				
-				
-			
+
 		});
+		
 		btn21_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn21_p2c, E21,lbl21);
 			}
 				
-				
-			
 		});
+		
 		btn22_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn22_p2c, E22,lbl22);
 			}
-				
-				
 			
 		});
+		
 		btn23_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn23_p2c, E23,lbl23);
 			}
-				
-				
-			
+
 		});
+		
 		btn24_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn24_p2c, E24,lbl24);
 			}
-				
-				
-			
+
 		});
+		
 		btn25_p2c.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cambiar(btn25_p2c, E25,lbl25);
 			}
-				
-				
-			
+
 		});
-		
-		
-		
-		
-		
+
 		@SuppressWarnings("unused")
 		SpringLayout sl_contentPane = new SpringLayout();
-		
-		
 
-	
-	
-		
 	}
 
 	@Override
@@ -1231,7 +1195,6 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 		try {
 			
 			if (btn.getToolTipText() == "encendido") {
-				
 				btn.setToolTipText("apagado");
 				int n = Integer.parseInt(lbl1.getText());
 				lbl.setForeground(Color.RED);
@@ -1241,21 +1204,18 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 				output.write("[" + formatter.format(date) + "] Apagando calefaccion " + n);
 				output.newLine();
 				output.close();
-
 			}
 			else {
 				
 				btn.setToolTipText("encendido");
 				int n = Integer.parseInt(lbl1.getText());
-
 				lbl.setForeground(Color.GREEN);
 				lbl.setText("Encendido");
-	
+				
 				BufferedWriter output = new BufferedWriter(new FileWriter(logFile, true));
 				output.write("[" + formatter.format(date) + "] Encendiendo calefaccion " + n);
 				output.newLine();
 				output.close();
-				
 			}
 			
 		} catch (IOException e1) {
@@ -1290,6 +1250,12 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 			System.out.println("error de escritura");
 		}
 	}
+	
+	public Point posicion() {
+		Point frame = this.rootPane.getLocationOnScreen();
+		return frame;
+	}
+	
 	public void encender(JButton btn, JLabel lbl, JLabel lbl1) {
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		Date date = new Date(System.currentTimeMillis());

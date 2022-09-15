@@ -16,6 +16,8 @@ import javax.swing.ImageIcon;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Point;
+
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -117,8 +119,10 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		Menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				menu_inicio menu = new menu_inicio();
 				menu.setVisible(true);
+				menu.setLocation(pos);
 				dispose();
 			}
 		});
@@ -142,8 +146,10 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		Alarmas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta_baja_alarmas Planta0 = new planta_baja_alarmas();
 				Planta0.setVisible(true);
+				Planta0.setLocation(pos);
 				dispose();
 			}
 		});
@@ -173,8 +179,10 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		Alarmas2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
+				Point pos = posicion();
 				planta2_alarmas Planta2 = new planta2_alarmas();
 				Planta2.setVisible(true);
+				Planta2.setLocation(pos);
 				dispose();
 			}
 		});
@@ -383,6 +391,11 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 
 	}
 
+	public Point posicion() {
+		Point frame = this.rootPane.getLocationOnScreen();
+		return frame;	
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
