@@ -5,18 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
 import java.awt.Color;
-
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Point;
-
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -31,21 +23,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.awt.event.ActionEvent;
-import javax.swing.JMenu;
-import javax.swing.JScrollPane;
 import javax.swing.SpringLayout;
-import java.awt.Dimension;
-
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import java.awt.Component;
-import java.awt.CardLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import java.awt.FlowLayout;
 import java.awt.Font;
-
-import javax.swing.JTextArea;
 
 public class planta1_calefaccion extends JFrame implements ActionListener{
 
@@ -175,7 +155,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	 * Create the frame.
 	 */
 	public planta1_calefaccion() {
-		setTitle("Planta 1 Calefacción");
+		setTitle("Planta 1 CalefacciÃ³n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1134, 620);
 		setResizable(false);
@@ -1009,7 +989,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	
 	public void cambiar(JButton btn, JLabel lbl, JLabel lblNum) {
 		int num = Integer.parseInt(lblNum.getText());
-		File logFile = new File("log_planta_1.txt");
+		File logFile = new File("planta1_calefaccion.txt");
 		
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		Date date = new Date(System.currentTimeMillis());
@@ -1056,7 +1036,7 @@ public class planta1_calefaccion extends JFrame implements ActionListener{
 	}
 	
 	public Point posicion() {
-		Point frame = this.rootPane.getLocation();
+		Point frame = this.rootPane.getLocationOnScreen();
 		return frame;
 	}
 	

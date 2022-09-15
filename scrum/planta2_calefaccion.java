@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
-import javax.swing.JMenu;
 import javax.swing.SpringLayout;
 import java.awt.Font;
 import java.awt.Point;
@@ -142,7 +141,7 @@ public class planta2_calefaccion extends JFrame implements ActionListener{
 	private JLabel E25;
 	private JLabel estado9;
 	private JMenuBar menuBar;
-	File logFile = new File("log_Planta2.txt");
+	File logFile = new File("planta2_calefaccion.txt");
 	private JButton btnCalefaccionE;
 	/**
 	 * Launch the application.

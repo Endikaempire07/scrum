@@ -805,7 +805,7 @@ public class planta_baja_calefaccion extends JFrame implements ActionListener {
 	}
 
 	public void cambiar(JButton btnC, JLabel lbl, int num) {
-		File logFile = new File("log.txt");
+		File logFile = new File("planta0_calefaccion.txt");
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 		Date date = new Date(System.currentTimeMillis());

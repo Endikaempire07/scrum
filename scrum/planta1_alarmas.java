@@ -5,19 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
 import java.awt.Color;
-
-import javax.swing.JTextField;
-import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 import java.awt.Point;
-
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -32,10 +23,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JMenu;
-import javax.swing.JScrollPane;
 import javax.swing.SpringLayout;
-import java.awt.Dimension;
 
 public class planta1_alarmas extends JFrame implements ActionListener{
 
@@ -46,10 +34,6 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenuItem Alarmas,Alarmas1,Alarmas2;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
-	private JButton btnMenu_p1a;
-	
 	private JButton btn1_pba;
 	private JButton btn2_pba;
 	private JButton btn3_pba;

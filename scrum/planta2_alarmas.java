@@ -144,9 +144,10 @@ public class planta2_alarmas extends JFrame {
 			public void actionPerformed(ActionEvent ae) {
 				// Close actual frame and open another one
 				Point pos = posicion();
+				System.out.print(pos);
 				planta_baja_alarmas Planta0 = new planta_baja_alarmas();
-				Planta0.setVisible(true);
 				Planta0.setLocation(pos);
+				Planta0.setVisible(true);
 				dispose();
 			}
 		});
@@ -432,7 +433,7 @@ public class planta2_alarmas extends JFrame {
 		@SuppressWarnings("unused")
 		SpringLayout sl_contentPane = new SpringLayout();
 		
-		//añadimos todos los botones al array
+		//aï¿½adimos todos los botones al array
 		botones = new ArrayList<JButton>();
 		botones.add(btn1_p2c);
 		botones.add(btn2_p2c);
@@ -488,7 +489,7 @@ public class planta2_alarmas extends JFrame {
 
 		for (JButton boton : botones) {
 			boton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {System.out.println(1);
+				public void actionPerformed(ActionEvent e) {
 					if (boton.getToolTipText().equals("encendido")) {
 						boton.setToolTipText("apagado");
 						boton.setBackground(Color.RED);
@@ -534,7 +535,7 @@ public class planta2_alarmas extends JFrame {
 		}
 	}
 	public Point posicion() {
-		Point frame = this.rootPane.getLocation();
+		Point frame = this.rootPane.getLocationOnScreen();
 		return frame;
 	}
 	
