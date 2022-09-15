@@ -374,7 +374,7 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		FileOutputStream  fos;
 		ObjectOutputStream oos;
 		try {
-			fos = new FileOutputStream("boton.dat");
+			fos = new FileOutputStream("planta1_alarmas.dat");
 			oos = new ObjectOutputStream(fos);
 			for (JButton jButton : botones) {
 				oos.writeObject(jButton);
@@ -402,7 +402,7 @@ public class planta1_alarmas extends JFrame implements ActionListener{
 		
 		try {
 
-			fis = new FileInputStream("boton.dat");
+			fis = new FileInputStream("planta1_alarmas.dat");
 			ois = new ObjectInputStream(fis);
 			while (fis.available() > 0) {
 				temporal.add((JButton) ois.readObject());
