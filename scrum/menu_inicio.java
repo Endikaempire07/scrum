@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.Component;
 import javax.swing.Box;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class menu_inicio extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private static Point posicion;
 
 	/**
 	 * Launch the application.
@@ -34,6 +36,7 @@ public class menu_inicio extends JFrame {
 				try {
 					menu_inicio frame = new menu_inicio();
 					frame.setVisible(true);
+					posicion = frame.getLocationOnScreen();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,6 +52,7 @@ public class menu_inicio extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 784, 432);
 		contentPane = new JPanel();
+		setResizable(false);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -59,10 +63,12 @@ public class menu_inicio extends JFrame {
 		JPanel panelCalefacciones = new JPanel();
 		JPanel panelAlarmas = new JPanel();
 		
-		JLabel lblSeleccion = new JLabel("Selección de planos");
-		JLabel lblCalefaccion = new JLabel("Calefacciónes");
-;
+		JLabel lblSeleccion = new JLabel("SelecciÃ³n de planos");
+		JLabel lblCalefaccion = new JLabel("CalefacciÃ³nes");
+
 		JLabel lblAlarmas = new JLabel("Alarmas de incendios");
+		
+		
 		
 		JButton btnCalefaccion = new JButton("Visualizar");
 		btnCalefaccion.setFont(new Font("Ravie", Font.PLAIN, 15));
@@ -78,11 +84,10 @@ public class menu_inicio extends JFrame {
 		btnCalefaccion.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_calefaccion menuAlarmas = new planta_baja_calefaccion();
-            	menuAlarmas.setVisible(true);
-            	menuAlarmas.setBounds(rootPane.getBounds());
-            	menuAlarmas.setLocationRelativeTo(rootPane);
+            	planta_baja_calefaccion menuCalefaccion = new planta_baja_calefaccion();
+            	menuCalefaccion.setVisible(true);
             	dispose();
+            	System.out.print(posicion);
             }
 		});
 		
@@ -100,14 +105,16 @@ public class menu_inicio extends JFrame {
 		btnAlarmas.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             	//Close actual frame and open another one
-            	planta_baja_alarmas menuCalefaccion = new planta_baja_alarmas();
-            	menuCalefaccion.setVisible(true);
-            	menuCalefaccion.setBounds(rootPane.getBounds());
-            	menuCalefaccion.setLocationRelativeTo(rootPane);
+				Point pos = posicion();
+				System.out.println(pos);
+            	planta_baja_alarmas menuAlarma = new planta_baja_alarmas();
+            	menuAlarma.setVisible(true);
+            	menuAlarma.setLocation(pos);
             	dispose();
             }
 		});
 		
+		getLocation();
 		
 		FlowLayout flowLayout = (FlowLayout) panelSeleccion.getLayout();
 		flowLayout.setVgap(50);
@@ -138,6 +145,11 @@ public class menu_inicio extends JFrame {
 		panelAlarmas.add(lblAlarmas);
 		
 		panelAlarmas.add(btnAlarmas);
+	}
+	
+	public Point posicion() {
+		Point frame = this.rootPane.getLocationOnScreen();
+		return frame;	
 	}
 
 }
